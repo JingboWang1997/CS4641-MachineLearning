@@ -64,7 +64,7 @@ for row in examples:
 
 remaining_list = training_list
 current_list = []
-for i in range(9):
+for i in range(10):
 	temp_list = []
 	print "looping", i
 	size = float(i + 1)/float(10)
@@ -77,21 +77,24 @@ for i in range(9):
 	good_current_count = 0
 	vgood_current_count = 0
 	print len(remaining_list)
-	for row in remaining_list:
-		if row[-1] == 'unacc' and unacc_current_count < unacc_need:
-			current_list.append(row)
-			unacc_current_count += 1
-		elif row[-1] == 'acc' and acc_current_count < acc_need:
-			current_list.append(row)
-			acc_current_count += 1
-		elif row[-1] == 'good' and good_current_count < good_need:
-			current_list.append(row)
-			good_current_count += 1
-		elif row[-1] == 'vgood' and vgood_current_count < vgood_need:
-			current_list.append(row)
-			vgood_current_count += 1
-		else:
-			temp_list.append(row)
+	if (i < 9):
+		for row in remaining_list:
+			if row[-1] == 'unacc' and unacc_current_count < unacc_need:
+				current_list.append(row)
+				unacc_current_count += 1
+			elif row[-1] == 'acc' and acc_current_count < acc_need:
+				current_list.append(row)
+				acc_current_count += 1
+			elif row[-1] == 'good' and good_current_count < good_need:
+				current_list.append(row)
+				good_current_count += 1
+			elif row[-1] == 'vgood' and vgood_current_count < vgood_need:
+				current_list.append(row)
+				vgood_current_count += 1
+			else:
+				temp_list.append(row)
+	else:
+		current_list += remaining_list
 	# temp list has the unused, current_list should be written to a file and be appended on the next iteration
 	remaining_list = temp_list
 	with open('car-training-' + str(size) + '.csv', mode='w') as file:

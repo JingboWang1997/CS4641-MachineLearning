@@ -1,0 +1,6 @@
+[submodule "Assignment"]
+	path = Assignment
+	url = https://github.com/pushkar/ABAGAIL
+[submodule "Assignment2/ABAGAIL"]
+	path = Assignment2/ABAGAIL
+	url = https://github.com/pushkar/ABAGAIL

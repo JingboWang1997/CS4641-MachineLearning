@@ -1,0 +1,936 @@
+
+<!DOCTYPE html>
+<html class="scripts-not-loaded" dir="ltr"   lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Assignment 1: Supervised Learning</title>
+  <!--[if lte IE 9]> <meta http-equiv=refresh content="0; URL=/ie-9-is-not-supported.html" /> <![endif]-->
+  <link rel="preload" href="https://du11hjcvx0uqb.cloudfront.net/dist/fonts/lato/latin/LatoLatin-Regular-3cd3657802.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="shortcut icon" type="image/x-icon" href="https://du11hjcvx0uqb.cloudfront.net/dist/images/favicon-e10d657a73.ico" />
+  <link rel="apple-touch-icon" href="https://du11hjcvx0uqb.cloudfront.net/dist/images/apple-touch-icon-585e5d997d.png" />
+  
+  <link rel="stylesheet" media="all" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/f4cf343cfe6a1133e41c56d74b1b5d7c/variables-750d72b9d3e5d522f965bf904110c132.css" />
+  <link rel="stylesheet" media="all" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/new_styles_normal_contrast/bundles/common-e39c04a622.css" />
+  <script>
+//<![CDATA[
+
+!function(){
+  function get(u){document.write('<scr'+'ipt src="'+ u +'"></sc'+'ript>')}
+  var o,s,v;
+  if (!(window.Promise && Object.assign && Object.values && [].find && [].includes && (o={},s=Symbol(),v={},o[s]=v,o[s]===v) && (function f(){}).bind().name==='bound f')) {
+    get("https://du11hjcvx0uqb.cloudfront.net/dist/ie11-polyfill-9f640d24ea.js");
+  }
+  window.fetch || get("https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.4/fetch.min.js");
+}();
+      
+//]]>
+</script>
+  <script src="https://du11hjcvx0uqb.cloudfront.net/dist/lato-fontfaceobserver-ed903d58c4.js" async="async"></script>
+  
+  <meta name="apple-itunes-app" content="app-id=480883488" />
+<link rel="manifest" href="/web-app-manifest/manifest.json" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eeb211">
+  <link rel="stylesheet" media="all" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/new_styles_normal_contrast/bundles/assignments-0e191b779e.css" />
+<link rel="stylesheet" media="all" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/new_styles_normal_contrast/bundles/tinymce-cfde159ef1.css" />
+<link rel="stylesheet" media="all" href="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/new_styles_normal_contrast/bundles/learning_outcomes-7cf8ca4f6c.css" />
+  
+  <link rel="stylesheet" media="all" href="https://instructure-uploads.s3.amazonaws.com/account_20960000000000001/attachments/2128/custom.css?AWSAccessKeyId=AKIAJFNFXH2V2O7RPCAA&amp;Expires=1925640408&amp;Signature=cV6KpfqNm3ovNM5bobvh7BORL4U%3D&amp;response-cache-control=Cache-Control%3Amax-age%3D473364000%2C%20public&amp;response-expires=473364000" />
+  <script>
+    function _earlyClick(e){
+      var c = e.target
+      while (c && c.ownerDocument) {
+        if (c.getAttribute('href') == '#' || c.getAttribute('data-method')) {
+          e.preventDefault()
+          (_earlyClick.clicks = _earlyClick.clicks || []).push(c)
+          break
+        }
+        c = c.parentNode
+      }
+    }
+    document.addEventListener('click', _earlyClick)
+  </script>
+  <script src="https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/f4cf343cfe6a1133e41c56d74b1b5d7c/variables-750d72b9d3e5d522f965bf904110c132.js" defer="defer"></script>
+  <script src="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/vendor.bundle-0353da1dce.js" defer="defer"></script>
+<script src="https://du11hjcvx0uqb.cloudfront.net/dist/timezone/America/New_York-c3226761e3.js" defer="defer"></script>
+<script src="https://du11hjcvx0uqb.cloudfront.net/dist/timezone/en_US-80a0ce259b.js" defer="defer"></script>
+<script src="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/appBootstrap.bundle-0661001892.js" defer="defer"></script>
+<script src="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/common.bundle-f89441110c.js" defer="defer"></script>
+<script src="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/assignment_show.bundle-0d8ba3ef0d.js" defer="defer"></script>
+<script src="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/submit_assignment.bundle-df318b71da.js" defer="defer"></script>
+<script src="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/edit_rubric.bundle-9b9f4e394f.js" defer="defer"></script>
+</head>
+
+<body class="with-left-side course-menu-expanded with-right-side assignments primary-nav-transitions context-course_26435 lato-font-not-loaded-yet">
+
+<noscript>
+  <div role="alert" class="ic-flash-static ic-flash-error">
+    <div class="ic-flash__icon" aria-hidden="true">
+      <i class="icon-warning"></i>
+    </div>
+    <h1>You need to have JavaScript enabled in order to access this site.</h1>
+  </div>
+</noscript>
+
+
+
+
+
+<ul id="flash_message_holder"></ul>
+<div id="flash_screenreader_holder"></div>
+
+<div id="application" class="ic-app">
+  
+  <header id="header" class="ic-app-header no-print ">
+    <a href="#content" id="skip_navigation_link">Skip To Content</a>
+      <div role="region" class="ic-app-header__main-navigation" aria-label="Global Navigation">
+        <div class="ic-app-header__logomark-container">
+          <a href="https://gatech.instructure.com/" class="ic-app-header__logomark">
+            <span class="screenreader-only">Dashboard</span>
+          </a>
+        </div>
+        <ul id="menu" class="ic-app-header__menu-list">
+            <li class="menu-item ic-app-header__menu-list-item ">
+              <a id="global_nav_profile_link" href="/profile" class="ic-app-header__menu-list-link">
+                <div class="menu-item-icon-container" aria-hidden="true">
+                  <div class="ic-avatar ">
+                    <img src="https://gatech.instructure.com/images/messages/avatar-50.png" alt="Jingbo Wang" />
+                  </div>
+                </div>
+                <div class="menu-item__text">
+                  Account
+                </div>
+              </a>
+            </li>
+          <li class="ic-app-header__menu-list-item ">
+            <a id="global_nav_dashboard_link" href="https://gatech.instructure.com/" class="ic-app-header__menu-list-link">
+              <div class="menu-item-icon-container" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="ic-icon-svg ic-icon-svg--dashboard" version="1.1" x="0" y="0" viewBox="0 0 280 200" enable-background="new 0 0 280 200" xml:space="preserve"><path d="M273.09,180.75H197.47V164.47h62.62A122.16,122.16,0,1,0,17.85,142a124,124,0,0,0,2,22.51H90.18v16.29H6.89l-1.5-6.22A138.51,138.51,0,0,1,1.57,142C1.57,65.64,63.67,3.53,140,3.53S278.43,65.64,278.43,142a137.67,137.67,0,0,1-3.84,32.57ZM66.49,87.63,50.24,71.38,61.75,59.86,78,76.12Zm147,0L202,76.12l16.25-16.25,11.51,11.51ZM131.85,53.82v-23h16.29v23Zm15.63,142.3a31.71,31.71,0,0,1-28-16.81c-6.4-12.08-15.73-72.29-17.54-84.25a8.15,8.15,0,0,1,13.58-7.2c8.88,8.21,53.48,49.72,59.88,61.81a31.61,31.61,0,0,1-27.9,46.45ZM121.81,116.2c4.17,24.56,9.23,50.21,12,55.49A15.35,15.35,0,1,0,161,157.3C158.18,152,139.79,133.44,121.81,116.2Z" /></svg>
+
+              </div>
+              <div class="menu-item__text">Dashboard</div>
+            </a>
+          </li>
+          <li class="menu-item ic-app-header__menu-list-item ic-app-header__menu-list-item--active">
+            <a id="global_nav_courses_link" href="/courses" class="ic-app-header__menu-list-link">
+              <div class="menu-item-icon-container" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" class="ic-icon-svg ic-icon-svg--courses" version="1.1" x="0" y="0" viewBox="0 0 280 259" enable-background="new 0 0 280 259" xml:space="preserve"><path d="M73.31,198c-11.93,0-22.22,8-24,18.73a26.67,26.67,0,0,0-.3,3.63v.3a22,22,0,0,0,5.44,14.65,22.47,22.47,0,0,0,17.22,8H200V228.19h-134V213.08H200V198Zm21-105.74h90.64V62H94.3ZM79.19,107.34V46.92H200v60.42Zm7.55,30.21V122.45H192.49v15.11ZM71.65,16.71A22.72,22.72,0,0,0,49,39.36V190.88a41.12,41.12,0,0,1,24.32-8h157V16.71ZM33.88,39.36A37.78,37.78,0,0,1,71.65,1.6H245.36V198H215.15v45.32h22.66V258.4H71.65a37.85,37.85,0,0,1-37.76-37.76Z"/></svg>
+
+              </div>
+              <div class="menu-item__text">
+                Courses
+              </div>
+            </a>
+          </li>
+          <li class="menu-item ic-app-header__menu-list-item ">
+            <a id="global_nav_calendar_link" href="/calendar" class="ic-app-header__menu-list-link">
+              <div class="menu-item-icon-container" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" class="ic-icon-svg ic-icon-svg--calendar" version="1.1" x="0" y="0" viewBox="0 0 280 280" enable-background="new 0 0 280 280" xml:space="preserve"><path d="M197.07,213.38h16.31V197.07H197.07Zm-16.31,16.31V180.76h48.92v48.92Zm-48.92-16.31h16.31V197.07H131.85Zm-16.31,16.31V180.76h48.92v48.92ZM66.62,213.38H82.93V197.07H66.62ZM50.32,229.68V180.76H99.24v48.92Zm146.75-81.53h16.31V131.85H197.07Zm-16.31,16.31V115.54h48.92v48.92Zm-48.92-16.31h16.31V131.85H131.85Zm-16.31,16.31V115.54h48.92v48.92ZM66.62,148.15H82.93V131.85H66.62ZM50.32,164.46V115.54H99.24v48.92ZM34,262.29H246V82.93H34ZM246,66.62V42.16A8.17,8.17,0,0,0,237.84,34H213.38v8.15a8.15,8.15,0,1,1-16.31,0V34H82.93v8.15a8.15,8.15,0,0,1-16.31,0V34H42.16A8.17,8.17,0,0,0,34,42.16V66.62Zm-8.15-48.92a24.49,24.49,0,0,1,24.46,24.46V278.6H17.71V42.16A24.49,24.49,0,0,1,42.16,17.71H66.62V9.55a8.15,8.15,0,0,1,16.31,0v8.15H197.07V9.55a8.15,8.15,0,1,1,16.31,0v8.15Z"/></svg>
+
+              </div>
+              <div class="menu-item__text">
+                Calendar
+              </div>
+            </a>
+          </li>
+          <li class="menu-item ic-app-header__menu-list-item ">
+            <a id="global_nav_conversations_link" href="/conversations" class="ic-app-header__menu-list-link">
+              <div class="menu-item-icon-container" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" class="ic-icon-svg ic-icon-svg--inbox" version="1.1" x="0" y="0" viewBox="0 0 280 280" enable-background="new 0 0 280 280" xml:space="preserve"><path d="M91.72,120.75h96.56V104.65H91.72Zm0,48.28h80.47V152.94H91.72Zm0-96.56h80.47V56.37H91.72Zm160.94,34.88H228.52V10.78h-177v96.56H27.34A24.17,24.17,0,0,0,3.2,131.48V244.14a24.17,24.17,0,0,0,24.14,24.14H252.66a24.17,24.17,0,0,0,24.14-24.14V131.48A24.17,24.17,0,0,0,252.66,107.34Zm0,16.09a8.06,8.06,0,0,1,8,8v51.77l-32.19,19.31V123.44ZM67.58,203.91v-177H212.42v177ZM27.34,123.44H51.48v79.13L19.29,183.26V131.48A8.06,8.06,0,0,1,27.34,123.44ZM252.66,252.19H27.34a8.06,8.06,0,0,1-8-8V202l30,18H230.75l30-18v42.12A8.06,8.06,0,0,1,252.66,252.19Z"/></svg>
+
+                <span class="menu-item__badge" style="display: none">0</span>
+              </div>
+              <div class="menu-item__text">
+                Inbox
+              </div>
+            </a>
+          </li>
+            
+
+      <li id="context_external_tool_114_menu_item" class="menu-item ic-app-header__menu-list-item">
+        <a class='ic-app-header__menu-list-link' href="/accounts/1/external_tools/114?launch_type=global_navigation">
+            <svg version="1.1" class="ic-icon-svg ic-icon-svg--lti menu-item__icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
+              <path d="M9.4 32c0-7.8 6.5-14.3 14.4-14.3h11.7v-9.4h-11.8c-13.1 0-23.7 10.6-23.7 23.7s10.7 23.7 23.7 23.7h11.7v-9.4h-11.7c-7.9 0-14.3-6.5-14.3-14.3z m54.6 0l-19.1-17v11.3h-20.2c-3.1 0-5.6 2.5-5.6 5.6s2.5 5.6 5.6 5.7h20.2v11.2l19.1-16.8z"/>
+            </svg>
+          <div class="menu-item__text">
+            Commons
+          </div>
+        </a>
+      </li>
+
+          <li class="ic-app-header__menu-list-item">
+           <a id="global_nav_help_link" class="ic-app-header__menu-list-link" data-track-category="help system" data-track-label="help button" href="http://help.instructure.com/">
+              <div class="menu-item-icon-container" role="presentation">
+                <svg xmlns="http://www.w3.org/2000/svg" class="ic-icon-svg menu-item__icon svg-icon-help" version="1.1" x="0" y="0" viewBox="0 0 200 200" enable-background="new 0 0 200 200" xml:space="preserve" fill="currentColor"><path d="M100,127.88A11.15,11.15,0,1,0,111.16,139,11.16,11.16,0,0,0,100,127.88Zm8.82-88.08a33.19,33.19,0,0,1,23.5,23.5,33.54,33.54,0,0,1-24,41.23,3.4,3.4,0,0,0-2.74,3.15v9.06H94.42v-9.06a14.57,14.57,0,0,1,11.13-14,22.43,22.43,0,0,0,13.66-10.27,22.73,22.73,0,0,0,2.31-17.37A21.92,21.92,0,0,0,106,50.59a22.67,22.67,0,0,0-19.68,3.88,22.18,22.18,0,0,0-8.65,17.64H66.54a33.25,33.25,0,0,1,13-26.47A33.72,33.72,0,0,1,108.82,39.8ZM100,5.2A94.8,94.8,0,1,0,194.8,100,94.91,94.91,0,0,0,100,5.2m0,178.45A83.65,83.65,0,1,1,183.65,100,83.73,83.73,0,0,1,100,183.65" transform="translate(-5.2 -5.2)"/></svg>
+
+              </div>
+              <div class="menu-item__text">
+                Help
+              </div>
+</a>          </li>
+        </ul>
+      </div>
+      <div class="ic-app-header__secondary-navigation">
+        <ul class="ic-app-header__menu-list">
+          <li class="menu-item ic-app-header__menu-list-item">
+            <button
+              id="primaryNavToggle"
+              class="ic-app-header__menu-list-link ic-app-header__menu-list-link--nav-toggle"
+              aria-label="Expand global navigation
+                "
+              title="Expand global navigation
+                "
+            >
+              <div class="menu-item-icon-container" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" class="ic-icon-svg ic-icon-svg--navtoggle" version="1.1" x="0" y="0" width="40" height="32" viewBox="0 0 40 32" xml:space="preserve">
+  <path d="M39.5,30.28V2.48H37.18v27.8Zm-4.93-13.9L22.17,4,20.53,5.61l9.61,9.61H.5v2.31H30.14l-9.61,9.61,1.64,1.64Z"/>
+</svg>
+
+              </div>
+            </button>
+          </li>
+        </ul>
+      </div>
+    <div id="global_nav_tray_container"></div>
+  </header>
+
+
+  <div id="instructure_ajax_error_box">
+    <div style="text-align: right; background-color: #fff;"><a href="#" class="close_instructure_ajax_error_box_link">Close</a></div>
+    <iframe id="instructure_ajax_error_result" src="about:blank" style="border: 0;" title="Error"></iframe>
+  </div>
+
+  
+
+  <div id="wrapper" class="ic-Layout-wrapper">
+      <div class="ic-app-nav-toggle-and-crumbs no-print">
+          <button type="button" id="courseMenuToggle" class="Button Button--link ic-app-course-nav-toggle" aria-live="polite" aria-label="Hide Courses Navigation Menu" title="Hide Courses Navigation Menu">
+            <i class="icon-hamburger" aria-hidden="true"></i>
+          </button>
+          <div class="ic-app-crumbs">
+        <nav id="breadcrumbs" role="navigation" aria-label="breadcrumbs"><ul><li class="home"><a href="/"><span class="ellipsible">      <i class="icon-home"
+         title="My Dashboard">
+        <span class="screenreader-only">My Dashboard</span>
+      </i>
+</span></a></li><li><a href="/courses/26435"><span class="ellipsible">CS-4641-A</span></a></li><li><a href="/courses/26435/assignments"><span class="ellipsible">Assignments</span></a></li><li><a href="https://gatech.instructure.com/courses/26435/assignments/62120"><span class="ellipsible">Assignment 1: Supervised Learning</span></a></li></ul></nav>
+        </div>
+      </div>
+    <div id="main" class="ic-Layout-columns">
+        <div class="ic-Layout-watermark"></div>
+        <div id="left-side"
+          class="ic-app-course-menu list-view"
+          style="display: block"
+          >
+              <span id="section-tabs-header-subtitle" class="ellipsis">Fall 2018</span>
+            <nav role="navigation" aria-label="Courses Navigation Menu"><ul id="section-tabs"><li class="section"><a href="/courses/26435" title="Home" class="home">Home</a></li><li class="section"><a href="/courses/26435/assignments" title="Assignments" class="assignments active">Assignments</a></li><li class="section"><a href="/courses/26435/discussion_topics" title="Discussions" class="discussions">Discussions</a></li><li class="section"><a href="/courses/26435/grades" title="Grades" class="grades">Grades</a></li><li class="section"><a href="/courses/26435/users" title="People" class="people">People</a></li><li class="section"><a href="/courses/26435/files" title="Files" class="files">Files</a></li><li class="section"><a href="/courses/26435/assignments/syllabus" title="Syllabus" class="syllabus">Syllabus</a></li><li class="section"><a href="/courses/26435/conferences" title="Conferences" class="conferences">Conferences</a></li><li class="section"><a href="/courses/26435/collaborations" title="Collaborations" class="collaborations">Collaborations</a></li><li class="section"><a href="/courses/26435/external_tools/3" title="Chat" class="context_external_tool_3">Chat</a></li><li class="section"><a href="/courses/26435/external_tools/81" title="Piazza" class="context_external_tool_81">Piazza</a></li><li class="section"><a href="/courses/26435/external_tools/115" title="My Media" class="context_external_tool_115">My Media</a></li><li class="section"><a href="/courses/26435/external_tools/116" title="Media Gallery" class="context_external_tool_116">Media Gallery</a></li><li class="section"><a href="/courses/26435/external_tools/173" title="Office 365" class="context_external_tool_173">Office 365</a></li><li class="section"><a href="/courses/26435/external_tools/717" title="BlueJeans" class="context_external_tool_717">BlueJeans</a></li><li class="section"><a href="/courses/26435/external_tools/897" title="GT Bookstore" class="context_external_tool_897">GT Bookstore</a></li><li class="section"><a href="/courses/26435/external_tools/1041" title="Badges" class="context_external_tool_1041">Badges</a></li><li class="section"><a href="/courses/26435/external_tools/1087?display=borderless" title="TurningPoint" class="context_external_tool_1087" target="_blank">TurningPoint</a></li></ul></nav>
+        </div>
+      <div id="not_right_side" class="ic-app-main-content">
+        <div id="content-wrapper" class="ic-Layout-contentWrapper">
+            
+
+          <div id="content" class="ic-Layout-contentMain" role="main">
+            
+
+
+
+<div id="assignment_show" class="assignment content_underline_links">
+    <!--Student View-->
+    <div class='assignment-title'>
+      <div class='title-content'>
+        <h1 class="title">
+          Assignment 1: Supervised Learning
+        </h1>
+      </div>
+      <div class='assignment-buttons'>
+        
+
+        <a role="button" class="Button Button--primary submit_assignment_link " href="#">Submit Assignment</a>
+      </div>
+    </div>
+    <ul class='student-assignment-overview'>
+      <li>
+        <span class='title'>Due</span>
+        <span class='value'>
+          <span class="date_text">
+                <span class="display_date">Sep 25</span> by 
+                <span class="display_time"> 9:30am</span>
+          </span>
+        </span>
+      </li>
+      <li>
+        <span class='title'>Points</span>
+        <span class='value'>100</span>
+      </li>
+        <li>
+          <span class='title'>Submitting</span>
+          <span class='value'>a file upload</span>
+        </li>
+      
+  <li>
+    <span class="title">Available</span>
+    <span class="value">
+        Sep 4 at 12am - Sep 25 at 9:30am
+        <span style="font-size: 0.8em;">21 days</span>
+    </span>
+  </li>
+
+      <div class="clear"></div>
+    </ul>
+
+  <div class="clear"></div>
+
+
+  <div class="clear"></div>
+
+  <div class="description user_content student-version"><p><span style="font-size: 14pt;"><strong>Assignment 1: Supervised Learning</strong></span></p>
+<p>Released: 09/04/18<br>Due: 09/25/18, beginning of class</p>
+<p>The assignment is worth 15% of your final grade.</p>
+<p>Collaboration: You must complete and turn in this assignment individually. The “whiteboard policy" is in effect. (Please see the collaboration policy on the course website for details).</p>
+<p><strong> </strong></p>
+<p><span style="font-size: 14pt;"><strong>Overview</strong></span></p>
+<p>The purpose of this project is to explore several fundamental techniques in supervised learning. It is important to realize that understanding an algorithm or technique requires understanding how it behaves under a variety of circumstances. As such, you will be asked to "implement" some simple learning algorithms (for sufficiently small values of implement, meaning I don't really want you to implement anything at all), and to compare their performance.</p>
+<p>You may program in any language that you wish (we do prefer broadly-used or revered languages like java, matlab, python, Lisp, R, or even C++; let us know beforehand if you're going to use something else). In any case <em>it is your responsibility</em> to make sure that the code can run on the standard CoC linux boxes. Re-read that last sentence. Next, ask yourself what it could possibly mean in practice.  Well, in practice, it means that if a TA needs to recreate your experiments, it will be possible (as detailed below) and if it isn't possible because you used some obscure language you made up based on HTML 2.0, well, that's just not going to work out.  Some of you who have been out of school for a long time and/or are used to assignments where you are told exactly what to do will fret about this requirement and try to infer more than is there. Don't. Use standard packages or languages and you'll never have to even figure out how to log into any CoC machine. </p>
+<p><strong><em>Read everything below carefully!</em></strong><strong> </strong></p>
+<p> </p>
+<p><span style="font-size: 14pt;"><strong>Instructions</strong></span></p>
+<p>You will implement five learning algorithms. They are:</p>
+<ul>
+<li>Decision trees with some form of pruning</li>
+<li>Neural networks</li>
+<li>Boosting</li>
+<li>Support Vector Machines</li>
+<li>
+<em>k</em>-nearest neighbors</li>
+</ul>
+<p>Each algorithm is described in detail in your textbook, the handouts, and all over the web. In fact, instead of implementing the algorithms yourself, you may (and by may I mean should) use software packages that you find elsewhere; however, if you do so you should provide proper attribution. Also, you will note that you have to do some fiddling to get good results, graphs and such, so even if you use another's package, you may need to modify it in various ways.</p>
+<p><strong>Decision Trees.</strong> For the decision tree, you should implement or steal a decision tree algorithm (and by "implement or steal" I mean "steal"). Be sure to use some form of pruning. You are not required to use information gain (for example, there is something called the GINI index that is sometimes used) to split attributes, but you should describe whatever it is that you do use.</p>
+<p><strong>Neural Networks.</strong> For the neural network you should<span style="text-decoration: line-through;"> implement or</span> steal your favorite kind of network and training algorithm. You may use networks of nodes with as many layers as you like and any activation function you see fit.</p>
+<p><strong>Boosting.</strong> Implement==steal a boosted version of your decision trees. As before, you will want to use some form of pruning, but presumably because you're using boosting you can afford to be much more aggressive about your pruning.</p>
+<p><strong>Support Vector Machines.</strong> You should implement a SVM (for a sufficiently loose definition of implement including "download"). This should be done in such a way that you can swap out kernel functions. I'd like to see results using at least two.</p>
+<p><strong><em>k</em></strong><strong>-Nearest Neighbors.</strong> You should "implement" <em>k</em>NN. Use different values of <em>k</em>.</p>
+<p><strong>Testing.</strong> In addition to implementing (wink), the algorithms described above, you must design two interesting classification problems. For the purposes of this assignment, a classification problem is just a set of training examples and a set of test examples. I don't care where you get the data. You can download some, take some from your own research, or make some up on your own. Be careful about the data you choose, though. You'll have to explain why they are interesting, use them in later assignments, and come to really care about them.</p>
+<p><strong> </strong></p>
+<p><span style="font-size: 14pt;"><strong>What to Turn In</strong></span></p>
+<p>You must submit via Canvas a tar or zip file named <em>yourgtaccount</em>.{zip,tar,tar.gz} that contains a single folder or directory named <em>yourgtaccount </em>(where<em> gtaccount </em>is probably something like<em> gtg7577b </em>or maybe<em> ci16</em>). That directory in turn contains:</p>
+<ol>
+<li>a file named <em>README.txt</em> containing instructions for running your code (see note below)</li>
+<li>your code (see note below)</li>
+<li>a file named <em>yourgtaccount</em>-<em>analysis.pdf</em> containing your writeup</li>
+<li>any supporting files you need, such as your training and test sets (see note below).</li>
+</ol>
+<p><strong>Note below</strong>: if the data are way, way, too huge for submitting, see if you can arrange for an URL. This also goes for code, too. Submitting all of Weka isn't necessary, for example, because I can get it myself; however, you should at least submit any files you found necessary to change and enough support and explanation so we could reproduce your results if we really wanted to do so. In any case, include all the information in <em>README.txt</em></p>
+<p>The file <em>yourgtaccount</em>-<em>analysis.pdf</em> should contain:</p>
+<ul>
+<li>
+<strong>A description of your two classification problems, and why they are interesting</strong>. Think hard about this. To be at all interesting, the problems should be non-trivial on the one hand, but capable of admitting comparisons and analysis of the various algorithms on the other. In other words, when you run the supervised learning algorithms on the datasets, they should give different results.<br><br>
+</li>
+<li>
+<strong>The training and testing error rates you obtained running the various learning algorithms on your two problems</strong>. At the very least you should include graphs that show performance on both training and test data. For iterative algorithms, you should graph the performance of the algorithm on the y-axis (you should choose an appropriate performance metric) compared against training time (you should choose an appropriate notion of "time," epochs, iterations?) on the x-axis. You should also plot performance as a function of training dataset size (note that this implies that you need to design a classification problem that has more than a trivial amount of data).<br><br>
+</li>
+<li>
+<strong>Analyses of your results</strong>. Why did you get the results you did? Compare and contrast the different algorithms. What sort of changes might you make to each of those algorithms to improve performance? How fast were they in terms of wall clock time? Iterations? Would cross validation help (and if it would, why didn't you implement it?)? How much performance was due to the problems you selected? How about the values you chose for learning rates, stopping criteria, regularization, pruning methods, and so forth (and why doesn't your analysis show results for the different values you chose?)? Which algorithm performed best? How do you define best? Be creative and think of as many questions you can, and as many answers as you can.</li>
+</ul>
+<p>For the sanity of your graders, please keep your analysis as short as possible while still covering the requirements of the assignment: to facilitate this sanity,<strong> <u>analysis writeup is limited to 12 pages</u>.</strong></p>
+<p> </p>
+<p><span style="font-size: 14pt;"><strong>Grading Criteria</strong></span></p>
+<p>You are being graded on your analysis more than anything else. Roughly speaking, implementing everything and getting it to run is worth maybe 0% of the grade on this assignment (I know you don't believe me, but in fact, steal the code; I not only don't care, I am encouraging you to use one of the many packages available both from the resources page and on the web). Of course, analysis without proof of working code makes the analysis suspect.</p>
+<p>The key thing is that your explanations should be both thorough and concise. Imagine you are writing a paper for the major conference in your field the year you will be graduating and you need to impress all those folks who will be deciding whether to interview you later. You don't want them to think you're shallow do you? Or that you're incapable of coming up with interesting classification problems, right? And you surely don't want them to think that you make up for a lack of content by blathering on about irrelevant aspects of your work? Of course not.</p>
+<p>Finally, I'd like to point out that I am very particular about the format of the assignments. Follow the directions carefully. Failure to turn in files without the proper naming scheme, or anything else that makes the graders' lives unduly hard is simply going to lead to an ignored assignment. I am remarkably inflexible about this. Also, this is a long assignment and there will be no late assignments accepted, so start now. Have fun. One day you'll look back on this and smile. There may be tears, but they will be tears of joy.</p></div>
+
+
+  <div style="display: none;">
+    <span class="timestamp">1537882200</span>
+    <span class="due_date_string">09/25/2018</span>
+    <span class="due_time_string">09:30am</span>
+  </div>
+</div>
+
+
+  
+<div style="display: none;" id="submit_assignment" data-context_code="course_26435" data-asset_string="assignment_62120">
+  <div class="content" id="submit_assignment_tabs">
+    <ul>
+        <li><a href="#submit_online_upload_form" class="submit_online_upload_option">File Upload</a></li>
+        <li><a href="#submit_google_doc_form" class="submit_online_url_option">Google Doc</a></li>
+        <li><a href="#submit_from_external_tool_form_173"
+          class="external-tool"
+          data-id="173"
+          data-name="Microsoft Office 365">Office 365</a></li>
+    </ul>
+      
+<form id="submit_online_upload_form" class="submit_assignment_form" enctype="multipart/form-data" action="/courses/26435/assignments/62120/submissions" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="kY7X3/dN1McL0DWfPIQxyxVibAZ6GJy5UHtspnCccPPJ/bmvmwKElW+iZddu0ACtIAYvLR5C1YoFEiGWRNcHoA==" />
+    <input value="online_upload" type="hidden" name="submission[submission_type]" id="submission_submission_type" />
+    <input value="" id="submission_attachment_ids" type="hidden" name="submission[attachment_ids]" />
+    <input id="eula_agreement_timestamp" type="hidden" name="submission[eula_agreement_timestamp]" />
+    <table class="formtable" style="width: 100%;">
+      <tr>
+        <td colspan="2">
+          Upload a file, or choose a file you&#39;ve already uploaded.
+            
+        </td>
+      </tr><tr>
+        <td><label id="attachmentLabel" for="attachment_uploaded_data">File:</label></td>
+        <td>
+          <a href="#" class="add_another_file_link">
+            <i class="icon-add" aria-hidden="true"></i>
+            Add Another File
+          </a>
+          <div id="submission_attachment_blank" class="submission_attachment" style="display: none;">
+            <input aria-labelledby="attachmentLabel" type="file" name="attachments[-1][uploaded_data]" class="input-file"/>
+            <a href="#" class="remove_attachment_link no-hover" style="display: none;"><i class="icon-end" aria-hidden="true"></i><span class="screenreader-only">remove empty attachment</span></a>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td style="font-size: 0.8em;">
+        <a href="#" class="toggle_uploaded_files_link">Click here to find a file you&#39;ve already uploaded</a><br/>
+        <div id="uploaded_files" style="display: none;">
+          
+          
+<ul>
+    <li class="folder  folder folder_36349">
+      <span class="id" style="display: none;">36349</span>
+      <span class="text name">my files</span>
+        
+<ul>
+    <li class="folder  folder folder_102019">
+      <span class="id" style="display: none;">102019</span>
+      <span class="text name">profile pictures</span>
+        
+<ul>
+</ul>
+
+    </li>
+    <li class="folder  folder folder_94434">
+      <span class="id" style="display: none;">94434</span>
+      <span class="text name">Submissions</span>
+        
+<ul>
+    <li class="folder  folder folder_203052">
+      <span class="id" style="display: none;">203052</span>
+      <span class="text name">Intro to Computer Vision</span>
+        
+<ul>
+    <li class="file  zip file_1082753">
+      <span class="id" style="display: none;">1082753</span>
+      <span class="text name">Jingbo_Wang_PS0_py.zip</span>
+    </li>
+    <li class="file  zip file_1095244">
+      <span class="id" style="display: none;">1095244</span>
+      <span class="text name">Jingbo_Wang_PS0_py-1.zip</span>
+    </li>
+    <li class="file  zip file_1195709">
+      <span class="id" style="display: none;">1195709</span>
+      <span class="text name">Jingbo_Wang_PS1_py.zip</span>
+    </li>
+    <li class="file  zip file_1198971">
+      <span class="id" style="display: none;">1198971</span>
+      <span class="text name">Jingbo_Wang_PS1_py-1.zip</span>
+    </li>
+</ul>
+
+    </li>
+    <li class="folder  folder folder_94435">
+      <span class="id" style="display: none;">94435</span>
+      <span class="text name">Objects and Design - A, B, GR</span>
+        
+<ul>
+    <li class="file  zip file_223697">
+      <span class="id" style="display: none;">223697</span>
+      <span class="text name">Lab32.zip</span>
+    </li>
+    <li class="file  zip file_223836">
+      <span class="id" style="display: none;">223836</span>
+      <span class="text name">Lab32-1.zip</span>
+    </li>
+    <li class="file  zip file_223862">
+      <span class="id" style="display: none;">223862</span>
+      <span class="text name">Lab32-2.zip</span>
+    </li>
+    <li class="file  doc file_533840">
+      <span class="id" style="display: none;">533840</span>
+      <span class="text name">Individual Case Study.docx</span>
+    </li>
+    <li class="file  pdf file_540301">
+      <span class="id" style="display: none;">540301</span>
+      <span class="text name">Individual Case Study.pdf</span>
+    </li>
+</ul>
+
+    </li>
+</ul>
+
+    </li>
+    <li class="folder  folder folder_36350">
+      <span class="id" style="display: none;">36350</span>
+      <span class="text name">conversation attachments</span>
+        
+<ul>
+</ul>
+
+    </li>
+</ul>
+
+    </li>
+</ul>
+
+        </div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <textarea class="submission_comment_textarea" placeholder="Comments..." title="Additional comments" name="submission[comment]" id="submission_comment">
+</textarea>
+        </td>
+      </tr>
+      
+
+      
+
+      <tr>
+        <td colspan="2" class='button-container'>
+          <button type="button" class='cancel_button btn'>Cancel</button>
+          <button type="submit" class="btn btn-primary" id="submit_file_button">Submit Assignment</button>
+        </td>
+      </tr><tr style="display: none;">
+        <td colspan="2" style="text-align: center;">
+          Submitting... <img src=""/>
+        </td>
+      </tr>
+    </table>
+    </form>
+
+
+
+    <style>
+    #google_docs_tree li.folder {
+      cursor: pointer;
+    }
+    #google_docs_tree li.file {
+      cursor: pointer;
+      -moz-border-radius: 3px;
+      width: 80%;
+      padding-right: 20px;
+    }
+    #google_docs_tree li.file:hover {
+      background-color: #eee;
+    }
+    ul.instTree li span.active {
+      background: none;
+    }
+    #google_docs_tree li.file.leaf.active {
+      background-color: #ddd;
+    }
+    #google_docs_tree li.file .filename {
+      float: left;
+      max-width: 98%;
+    }
+    #google_docs_tree li.file .popout {
+      float: right;
+    }
+    </style>
+        <div id="submit_google_doc_form">
+          Before you can submit assignments directly from Google Drive you need to authorize Canvas to access your Google Drive account:
+          <div style="font-size: 1.1em; text-align: center; margin: 10px;">
+            <a class="btn" href="https://gatech.instructure.com/oauth?return_to=https%3A%2F%2Fgatech.instructure.com%2Fcourses%2F26435%2Fassignments%2F62120%23submit_google_doc_form&amp;service=google_drive">Authorize Google Drive Access</a>
+          </div>
+        </div>
+
+
+      <div id="submit_from_external_tool_form_173" style="padding: 5px 5px 0 5px;"></div>
+
+  </div>
+</div>
+
+
+
+
+
+  <div id="rubrics" style="margin-bottom: 10px;">
+    <div style="display: none;" id="rubric_parameters">
+      <input type="hidden" name="rubric_association[association_type]" value="Assignment"/>
+      <input type="hidden" name="rubric_association[association_id]" value="62120"/>
+      <input type="hidden" name="rubric_association[purpose]" value="grading"/>
+    </div>
+    
+<div id="rubric_long_description_dialog" style="display: none;">
+  <div class="editing">
+    <form id="edit_criterion_form" class="no-margin-bottom">
+      <div>
+        <label class="rating_form_label">Description
+          <textarea class="description" rows="1" name="description"></textarea>
+        </label>
+      </div>
+      <div>
+        <label class="rating_form_label">Long Description
+          <textarea class="long_description" rows="4" name="long_description"></textarea>
+        </label>
+      </div>
+      <div class="button-container">
+        <button type="button" class="btn btn button-secondary cancel_button">Cancel</button>
+        <button type="button" class="btn save_button btn-primary">Update Criterion</button>
+      </div>
+    </form>
+  </div>
+  <div class="displaying">
+    <div class="long_description">
+    </div>
+  </div>
+</div>
+<div id="rubric_criterion_comments_dialog" style="display: none;">
+  <div
+    class="criterion_description"
+    style="border-bottom: 1px solid #ccc; padding: 5px 0; font-size: 1.2em; font-weight: bold; margin-bottom: 5px;"
+    tabindex="-1"
+  ></div>
+  <div class="editing">
+    <label for="criterion_comments_textarea">
+      Additional Comments:
+    </label>
+    <textarea
+      id="criterion_comments_textarea"
+      class="criterion_comments"
+      name="criterion_comments"
+      style="width: 370px;"></textarea>
+    <div class="button-container">
+      <button type="button" class="btn btn button-secondary cancel_button">Cancel</button>
+      <button type="button" class="btn save_button">Update Comments</button>
+    </div>
+  </div>
+  <div class="displaying">
+    Additional Comments:
+    <div class="criterion_comments" style="margin-top: 10px;">
+    </div>
+  </div>
+</div>
+<div id="rubric_rating_dialog" style="display: none;">
+  <div class="description" style="border-bottom: 1px solid #ccc; padding: 5px 0; font-size: 1.2em; font-weight: bold; margin-bottom: 5px;">
+    <span id="edit_rating_form_criterion_description"></span>
+  </div>
+  <div class="editing">
+    <form id="edit_rating_form" class="no-margin-bottom">
+      <div class="toggle_for_hide_points">
+        <div><label id='rating_form_score_label' class="rating_form_label">Rating Score</label></div>
+        <span id='rating_form_max_score_label' hidden>Rating max score</span>
+        <input id="points" aria-labelledby="rating_form_score_label" type="text" size="2" name="points" class="no-margin-bottom span1" />
+        <span class="range_rating">to >
+          <input aria-label="Rating min score" type="text" size="2" name="min_points" class="no-margin-bottom span1 min_points" placeholder="min"/>
+        </span>pts
+      </div>
+      <div>
+        <label for="rating_form_title" class="rating_form_label">Rating Title</label>
+        <input id="rating_form_title" type="text" class="rating_description" style="width: 90%;" name="description"/>
+      </div>
+      <div>
+        <label for="rating_form_description" class="rating_form_label">Rating Description</label>
+        <textarea id="rating_form_description" rows="4" style="width: 90%;" class="rating_long_description" name="rating_long_description" form="edit_rating_form"></textarea>
+      </div>
+      <div class="button-container">
+        <button type="button" class="btn button-secondary cancel_button">Cancel</button>
+        <button type="button" class="btn btn-primary save_button ok_button">Update Rating</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+  </div>
+  
+<div
+  class="rubric_container rubric  "
+  id="default_rubric"
+  style="display: none;"
+  tabindex="0"
+>
+  <div class="screenreader-only"><h2>Rubric</h2></div>
+  <div class="rubric_title">
+    <div style="display: none;" class="links displaying pull-right">
+      <a
+        href="/courses/26435/rubrics/%7B%7B%20id%20%7D%7D"
+        class=" edit_rubric_link no-print no-hover"
+        style=""
+        title="Edit Rubric"
+        aria-label="Edit Rubric"
+        role="button"
+      ><i class="icon-edit standalone-icon"></i></a>
+      <a
+        href="https://gatech.instructure.com/search/rubrics?q="
+        class="find_rubric_link no-print no-hover"
+        style=""
+        title="Find Another Rubric"
+        aria-label="Find Another Rubric"
+        role="button"
+      ><i class="icon-search standalone-icon"></i></a>
+        <a
+          href="/courses/26435/rubric_associations/%7B%7B%20rubric_association_id%20%7D%7D"
+          class="delete_rubric_link no-print no-hover"
+          style=""
+          title="Delete Rubric"
+          aria-label="Delete Rubric"
+          role="button"
+        ><i class="icon-trash standalone-icon"></i></a>
+      <div style="display: none;">
+        <div class="use_for_grading">&nbsp;</div>
+        <div class="free_form_criterion_comments">&nbsp;</div>
+        <div class="hide_score_total">&nbsp;</div>
+        <div class="hide_outcome_results">&nbsp;</div>
+        <div class="hide_points">&nbsp;</div>
+        <div class="rubric_association_id">&nbsp;</div>
+        <div class="user_id">&nbsp;</div>
+        <div class="assessment_type"></div>
+        <a href="/courses/26435/rubric_associations/%7B%7B%20rubric_association_id%20%7D%7D/assessments/%7B%7B%20assessment_id%20%7D%7D" rel="nofollow" class="edit_assessment_link">&nbsp;</a>
+        <a href="/courses/26435/rubrics/%7B%7B%20rubric_id%20%7D%7D" class="edit_rubric_url">&nbsp;</a>
+          <a href="/courses/26435/rubric_associations/%7B%7B%20association_id%20%7D%7D" class="delete_rubric_url">&nbsp;</a>
+      </div>
+    </div>
+    <div style="float: right; font-size: 0.8em; display: none;" class="links displaying locked">
+      <span style="">Can&#39;t change a rubric once you&#39;ve started using it.</span>
+        <a href="/courses/26435/rubric_associations/%7B%7B%20association_id%20%7D%7D" class="delete_rubric_url" style="display: none;">&nbsp;</a>
+    </div>
+
+    <div class="editing" style="float: right;">
+      <a href="https://gatech.instructure.com/search/rubrics?q=" class="find_rubric_link icon-search" style="" title="Find Existing Rubric">Find a Rubric</a>
+    </div>
+    <div class="editing" style="text-align: left">
+      <label for="rubric-title">Title:</label>
+      <input id="rubric-title" type="text" class="no-margin-bottom" name="title" value="Some Rubric" style="width: 200px;" maxlength="255" aria-label="Title:"/>
+      <a href="https://gatech.instructure.com/search/rubrics?q=" style="display: none;"><img alt="" src="https://du11hjcvx0uqb.cloudfront.net/dist/images/find-6164443e2a.png" /> Find Rubric</a>
+    </div>
+    <div class="displaying">
+      <span class="title" tabindex="-1">Title</span>
+    </div>
+    <div class="has-assessments-warning" style="display: none;">
+      You&#39;ve already rated students with this rubric.  Any major changes could affect their assessment results.
+    </div>
+  </div>
+<table class="rubric_table">
+<caption>
+  <div class="screenreader-only">
+    <span class="title">Title</span>
+  </div>
+</caption>
+<thead>
+  <tr>
+    <th scope="col">Criteria</th>
+    <th scope="col">Ratings</th>
+    <th scope="col" class="toggle_for_hide_points ">
+      Pts
+    </th>
+  </tr>
+</thead>
+<tbody>
+  
+<tr id="criterion_blank" class="criterion blank  " style="display: none;">
+  <td class="criterion_description hover-container pad-box-micro">
+    <div class="container">
+      <div class="links editing">
+          <a href="#" class="edit_criterion_link"><i class="icon-edit standalone-icon"></i><span class="screenreader-only">Edit criterion description</span></a>
+        <a href="#" class="delete_criterion_link"><i class="icon-trash standalone-icon"></i><span class="screenreader-only">Delete criterion row</span></a>
+      </div>
+      <div class="description_content">
+        <span class="outcome_sr_content" aria-hidden="true">
+          <i class="learning_outcome_flag icon-outcomes" aria-hidden="true"></i>
+          <span class="screenreader-only">This criterion is linked to a Learning Outcome</span>
+        </span>
+        <span class="description description_title">Description of criterion</span>
+        <span class="learning_outcome_id" style="display: none;"></span>
+        <span class="criterion_id" style="display: none;"></span>
+          <div class="long_description small_description"></div>
+        <div style="display: none;" class="long_description_holder editing empty">
+          <a href="#" class="long_description_link hidden">view longer description</a>
+          <textarea class="long_description" aria-label="Long Description" style="display: none;"></textarea>
+        </div>
+        <div class="hide_when_learning_outcome ">
+          <div class="criterion_use_range_div editing toggle_for_hide_points ">
+            <label>Range
+              <input type="checkbox" class="criterion_use_range" /></label>
+          </div>
+        </div>
+        <div class="threshold toggle_for_hide_points ">
+          threshold:
+          <span class="mastery_points">5</span> pts
+        </div>
+      </div>
+
+    </div>
+  </td>
+  <td style="padding: 0;">
+      <table class="ratings" style=""><tr>
+          <td id="rating_blank"
+              class="rating edge_rating
+                
+                "
+          >
+            <div class="container">
+              <div class="rating-main">
+                  <div class="editing links">
+                    <a href="#" class="edit_rating_link"><i class="icon-edit standalone-icon"></i><span class="screenreader-only">Edit rating</span></a>
+                    <a href="#" class="delete_rating_link"><i class="icon-trash standalone-icon" ></i><span class="screenreader-only">Delete rating</span></a>
+                  </div>
+                  <div class="clear"></div>
+                <span class="nobr toggle_for_hide_points ">
+                  <span class="points">5</span>
+                  <span class="range_rating" style="display: none;">to ><span class="min_points">0</span></span> pts
+                </span>
+                <div class="description rating_description_value">Full Marks</div>
+                <div class="rating_long_description small_description"></div>
+                <span class="rating_id" style="display: none;">blank</span>
+              </div>
+                <div class="editing links add_rating_link">
+                  <a href="#" class="add_rating_link_after" aria-label="Add rating"><i class="icon-add icon-Solid"></i></a>
+                </div>
+            </div>
+          </td>
+          <td id="rating_blank_2"
+              class="rating edge_rating
+                infinitesimal
+                "
+          >
+            <div class="container">
+              <div class="rating-main">
+                  <div class="editing links">
+                    <a href="#" class="edit_rating_link"><i class="icon-edit standalone-icon"></i><span class="screenreader-only">Edit rating</span></a>
+                    <a href="#" class="delete_rating_link"><i class="icon-trash standalone-icon" ></i><span class="screenreader-only">Delete rating</span></a>
+                  </div>
+                  <div class="clear"></div>
+                <span class="nobr toggle_for_hide_points ">
+                  <span class="points">0</span>
+                  <span class="range_rating" style="display: none;">to ><span class="min_points">0</span></span> pts
+                </span>
+                <div class="description rating_description_value">No Marks</div>
+                <div class="rating_long_description small_description"></div>
+                <span class="rating_id" style="display: none;">blank_2</span>
+              </div>
+            </div>
+          </td>
+      </tr></table>
+      <div style="display: none; font-style: italic; font-size: 0.8em; margin: 5px;" class="custom_ratings">
+        This area will be used by the assessor to leave comments related to this criterion.
+      </div>
+  </td>
+  <td class="nobr points_form toggle_for_hide_points ">
+    <div class="editing" style="white-space: normal">
+      <span style="white-space: nowrap; font-size: 0.8em">
+          
+            <input
+              type="text"
+              aria-label="Points"
+              value="5"
+              class="criterion_points span1 no-margin-bottom"
+            />
+           pts
+      </span><br />
+    </div>
+    <div class="displaying">
+      <span style="white-space: nowrap;">
+        <span class="criterion_rating_points_holder" style="display: none;">
+          <span class="criterion_rating_points">&nbsp;</span> /
+        </span>
+        <span class="display_criterion_points">5</span> pts<br />
+      </span>
+    </div>
+    <div class="ignoring">
+      <span> -- </span>
+    </div>
+    <div class="criterion_comments">
+        <a href="#" class="no-hover criterion_comments_link" title="Additional Comments">
+          <img alt="Additional Comments" src="https://du11hjcvx0uqb.cloudfront.net/dist/images/rubric_comment-ddae8546ab.png" />
+        </a>
+        <div class="custom_rating" style="display: none;"></div>
+    </div>
+  </td>
+</tr>
+
+  <tr class="summary">
+    <td colspan="4">
+      <div class="total_points_holder toggle_for_hide_points "
+        style="float: right; ">
+        <span>Total Points:
+            <span class="rubric_total">
+              5
+            </span>
+ <span class="assessing">out of 5</span>        </span>
+      </div>
+      <div class="editing pull-left">
+        <span id="add_criterion_holder" class="criterion_link"></span>
+      </div>
+      <div class="clear"></div>
+    </td>
+  </tr>
+</tbody>
+</table>
+</div>
+<table style="display: none;">
+  <tr id="edit_rubric">
+    <td colspan="4">
+      <form id="edit_rubric_form" class="edit-rubric-form no-margin-bottom">
+        <div class="rubric_custom_ratings" style="">
+          <input type="checkbox" id="rubric_custom_rating" class="rubric_custom_rating" />
+          <label for="rubric_custom_rating">I&#39;ll write free-form comments when assessing students</label>
+        </div>
+          <div class="hide_points" style="">
+            <input type="checkbox" id="hide_points" class="hide_points_checkbox" />
+            <label for="hide_points">Remove points from rubric</label>
+          </div>
+          <div class="hide_outcome_results" style="">
+            <input type="checkbox" id="hide_outcome_results" class="hide_outcome_results_checkbox" />
+            <label for="hide_outcome_results">Don&#39;t post Outcomes results to Learning Mastery Gradebook</label>
+          </div>
+          <div class="rubric_grading" style="">
+            <input type="checkbox" id="grading_rubric" class="grading_rubric_checkbox" />
+            <label for="grading_rubric">Use this rubric for assignment grading</label>
+          </div>
+        <div class="totalling_rubric" style="">
+          <input type="checkbox" id="totalling_rubric" class="totalling_rubric_checkbox" />
+          <label for="totalling_rubric">Hide score total for assessment results</label>
+        </div>
+        <div class="ic-Action-header ic-Action-header--half-margin">
+          <div class="ic-Action-header__Primary">
+            <button type="button" class="Button cancel_button">Cancel</button>
+            <button type="submit" class="Button Button--primary save_button">Create Rubric</button>
+          </div>
+        </div>
+      </form>
+    </td>
+  </tr>
+</table>
+
+  
+
+
+          </div>
+        </div>
+        <div id="right-side-wrapper" class="ic-app-main-content__secondary">
+          <aside id="right-side" role="complementary">
+            
+<div id="sidebar_content">
+
+
+</div>
+
+          </aside>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+    <div style="display:none;"><!-- Everything inside of this should always stay hidden -->
+        <div id="page_view_id">e2b3727c-8ec6-4436-895e-f3a095bf840f</div>
+    </div>
+  <div id='aria_alerts' class='hide-text affix' role="alert" aria-live="assertive"></div>
+  <div id='StudentTray__Container'></div>
+  
+
+<script>
+  INST = {"environment":"production","allowMediaComments":true,"kalturaSettings":{"domain":"nv.instructuremedia.com","resource_domain":"nv.instructuremedia.com","rtmp_domain":"fms-prod.instructuremedia.com","partner_id":"9","subpartner_id":"0","player_ui_conf":"0","kcw_ui_conf":"0","upload_ui_conf":"0","max_file_size_bytes":534773760,"do_analytics":false,"hide_rte_button":false,"js_uploader":true},"googleAnalyticsAccount":"UA-9138420-1","logPageViews":true,"maxVisibleEditorButtons":3,"editorButtons":[{"name":"educreations","id":83,"url":"https://www.edu-apps.org/tool_redirect?id=educreations","icon_url":"https://www.edu-apps.org/tools/educreations/icon.png","canvas_icon_class":null,"width":690,"height":530},{"name":"Embed Kaltura Media","id":116,"url":"https://canvasgatechtest.kaf.kaltura.com/browseandembed/index/browseandembed","icon_url":"https://cdnsecakmi.kaltura.com/content/uiconf/canvas/kaltura_sun.png","canvas_icon_class":null,"width":1100,"height":600},{"name":"Microsoft Office 365","id":173,"url":"https://office365-iad-prod.instructure.com/lti/rce-content-item","icon_url":"https://office365-iad-prod.instructure.com/images/office365_icon.png","canvas_icon_class":null,"width":900,"height":600},{"name":"TEDEd","id":366,"url":"https://www.edu-apps.org/lti_public_resources/?tool_id=youtube_ted_ed","icon_url":"https://www.edu-apps.org/assets/lti_public_resources/ted_ed_icon.png","canvas_icon_class":null,"width":560,"height":600},{"name":"Flat World Knowledge","id":367,"url":"https://www.edu-apps.org/tool_redirect?id=flat_world_knowledge","icon_url":"https://www.edu-apps.org/tools/flat_world_knowledge/icon.png","canvas_icon_class":null,"width":690,"height":530},{"name":"LibApps Library Content","id":725,"url":"https://gatech.libapps.com/libapps/lti_launch_manual.php","icon_url":"https://libapps.s3.amazonaws.com/apps/libapps/images/favicon_lti.png","canvas_icon_class":null,"width":800,"height":600}]};
+  ENV = {"ASSET_HOST":"https://du11hjcvx0uqb.cloudfront.net","active_brand_config_json_url":"https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/f4cf343cfe6a1133e41c56d74b1b5d7c/variables-750d72b9d3e5d522f965bf904110c132.json","url_to_what_gets_loaded_inside_the_tinymce_editor_css":["https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/f4cf343cfe6a1133e41c56d74b1b5d7c/variables-750d72b9d3e5d522f965bf904110c132.css","https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/new_styles_normal_contrast/bundles/what_gets_loaded_inside_the_tinymce_editor-53dac18d10.css"],"url_for_high_contrast_tinymce_editor_css":["https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/default/variables-high_contrast-750d72b9d3e5d522f965bf904110c132.css","https://du11hjcvx0uqb.cloudfront.net/dist/brandable_css/new_styles_high_contrast/bundles/what_gets_loaded_inside_the_tinymce_editor-b4d65fe883.css"],"current_user_id":"7161","current_user_roles":["user","student","teacher"],"current_user_disabled_inbox":false,"files_domain":"cluster13-files.instructure.com","DOMAIN_ROOT_ACCOUNT_ID":20960000000000001,"k12":false,"use_responsive_layout":false,"help_link_name":"Help","help_link_icon":"help","use_high_contrast":false,"LTI_LAUNCH_FRAME_ALLOWANCES":["geolocation *","microphone *","camera *","midi *","encrypted-media *"],"SETTINGS":{"open_registration":false,"eportfolios_enabled":true,"collapse_global_nav":true,"show_feedback_link":true,"enable_profiles":false},"current_user":{"id":"7161","display_name":"Jingbo Wang","avatar_image_url":"https://gatech.instructure.com/images/messages/avatar-50.png","html_url":"https://gatech.instructure.com/about/7161"},"page_view_update_url":"/page_views/e2b3727c-8ec6-4436-895e-f3a095bf840f?page_view_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpIjoiZTJiMzcyN2MtOGVjNi00NDM2LTg5NWUtZjNhMDk1YmY4NDBmIiwidSI6MjA5NjAwMDAwMDAwMDcxNjEsImMiOiIyMDE4LTA5LTA3VDE0OjUzOjI5Ljg4WiJ9.Yg_F9eQMll5p7428PUiyNxjeLttOO4HbO5BEItcEFyY","context_asset_string":"course_26435","ping_url":"https://gatech.instructure.com/api/v1/courses/26435/ping","TIMEZONE":"America/New_York","CONTEXT_TIMEZONE":"America/New_York","LOCALE":"en","BIGEASY_LOCALE":"en_US","FULLCALENDAR_LOCALE":"en","MOMENT_LOCALE":"en","RICH_CONTENT_SERVICE_ENABLED":true,"RICH_CONTENT_APP_HOST":"rich-content-iad.inscloudgate.net","RICH_CONTENT_CDN_HOST":"dvgcns7dz7zc.cloudfront.net/rce_service/versions/","RICH_CONTENT_SKIP_SIDEBAR":null,"JWT":"ZXlKaGJHY2lPaUprYVhJaUxDSmxibU1pT2lKQk1qVTJSME5OSW4wLi5UWUw1ajlOMDR3XzNaTGUxLmVXSUR5dFpnQ3Fhdlk0RzZFQUl4a3luNTl3OWlpVml5VC00TW5FaHA3bGRNd0xoV01FRmdManR5eWpQb2FSS1A3bTB0NC1WU0QtSVRfS1pNN2ZoOHJEdUhLUGpqTDdFb2hRVDRIRXpLWWpqQWNyQ3JsUmc1anJTeDBYcEVjQVVmbDlxQmM3RDdmVEx2SDVnWUN2RjhWMVRRalJTY250bXVDQk1ZNFhKMmVDdUF1dHFjaFowU3c5WTRxYlhrOXVJM1BJNFpRQzRBTnpnTUlWQ2dQWUxLMjR1T0NlVUFISWJyb3VPb3VERW51dUFhUHkwcXJGcTM1OENiS3ZobUZBdmNZWUNiNDRMN2hEYkctRGZnYTltYk1sUTh6WUF2WGJCMTBGUW5xdVFSTUdldnU5bVZadjNsNkdtQjhUVmtXZUs0TE1PanRacUZWRTZfci1BbjRvQ1BsaXRtbnVRamVEeUhldGZud2l0WnFrUnJGV2F4LWVia2owT0JiMERWZlQxM3VwQ04zdkV3N1RGMnBTYXc5S2FHTzV6MnpjTVdaUmJLek02MFg5RmJscHl1QXgtZ1lKYnQ5RmpIc1hGZ0JsM0IzYThyUFo4cFBEbzZMWGJ1T0paNm5WUnp5QlNQeGYzWkNuYzhuYWFScDNxVUg3OUpkaTRQOHZRcmlNQjljSGlrdlRrdXNubGZhd19ISVNGLXNPN1FPY0pXRHVXOFZWeTdSMGkwQmFEMWRNWjJHUUQtN2FXcHZMaU4xQThwQWxzcEdiS1BXbjBWRWFId0pwUFVnOE1ROXI0X1V3U21pS0lfcDJFZlJTT2IxOG1xZXFQa3o0SVJFVUxGRWxsZDY1VUNfc01JS2IyMnNCRF81U1BTQmNiMDFjUlI2cURncDN2V0hpelBDUC10dm9xZW9UcVFVOUFYT2kzMFNDcUxRS29PeWNvZmg3TTU1R3N5Mng5Um1HdGthTlFUSnEwc1ZVeV9LNmpRLVA0Q2pNeE1YZXM4MVZBMHF2NTlQVTFOZWZSU0lyMUZObFhyWkw0RGtlMm5JUEVJQVhnUTl1dERPUHRWdjBsc0c4QkpxTmF4Li1FRW0tZEdRZDYwa0tlZ0QtRWhyQ2c=","RICH_CONTENT_CAN_UPLOAD_FILES":false,"ROOT_OUTCOME_GROUP":{"id":"3641","title":"Machine Learning - A","vendor_guid":null,"url":"/api/v1/courses/26435/outcome_groups/3641","subgroups_url":"/api/v1/courses/26435/outcome_groups/3641/subgroups","outcomes_url":"/api/v1/courses/26435/outcome_groups/3641/outcomes","can_edit":false,"import_url":"/api/v1/courses/26435/outcome_groups/3641/import","context_id":"26435","context_type":"Course","description":null},"COURSE_ID":26435,"ASSIGNMENT_ID":62120,"EXTERNAL_TOOLS":[{"id":"173","domain":"office365-iad-prod.instructure.com","url":"https://office365-iad-prod.instructure.com/lti/course-navigation","consumer_key":"93892241-b1ae-4108-b5e5-b373ebf58a04","name":"Microsoft Office 365","description":"Allows you to pull in documents from Office 365 to Canvas","created_at":"2017-07-27T23:40:24Z","updated_at":"2018-03-20T21:52:14Z","privacy_level":"name_only","custom_fields":{"account_id":"$Canvas.account.id","assignment_title":"$Canvas.assignment.title","base_url":"$Canvas.api.baseUrl","collaboration_members_url":"$Canvas.api.collaborationMembers.url","course_id":"$Canvas.course.id","domain":"$Canvas.api.domain","group_context_ids":"$Canvas.group.contextIds","masquerading_user_id":"$Canvas.masqueradingUser.userId","membership_service_url":"$ToolProxyBinding.memberships.url","time_zone":"$Person.address.timezone","user_id":"$Canvas.user.id","previous_context_ids":"$Canvas.course.previousContextIds","previous_context_ids_recursive":"$Canvas.course.previousContextIds.recursive"},"workflow_state":"name_only","vendor_help_link":null,"account_navigation":null,"similarity_detection":null,"assignment_menu":null,"assignment_selection":{"message_type":"ContentItemSelectionRequest","text":"Office 365 Cloud Assignment","url":"https://office365-iad-prod.instructure.com/lti/cloud-assignment-template","label":"Office 365 Cloud Assignment","selection_width":800,"selection_height":400,"icon_url":"https://office365-iad-prod.instructure.com/images/office365_icon.png"},"collaboration":{"canvas_icon_class":"icon-lti","icon_url":"https://office365-iad-prod.instructure.com/images/office365_icon.png","message_type":"ContentItemSelectionRequest","text":"Office 365","url":"https://office365-iad-prod.instructure.com/lti/collaboration-content-item","label":"Office 365","selection_width":800,"selection_height":400},"course_assignments_menu":null,"course_home_sub_navigation":null,"course_navigation":{"text":"Office 365","url":"https://office365-iad-prod.instructure.com/lti/course-navigation","label":"Office 365","selection_width":800,"selection_height":400,"icon_url":"https://office365-iad-prod.instructure.com/images/office365_icon.png"},"course_settings_sub_navigation":null,"discussion_topic_menu":null,"editor_button":{"icon_url":"https://office365-iad-prod.instructure.com/images/office365_icon.png","message_type":"ContentItemSelectionRequest","selection_height":600,"selection_width":900,"url":"https://office365-iad-prod.instructure.com/lti/rce-content-item","label":"Microsoft Office 365"},"file_menu":null,"global_navigation":null,"homework_submission":{"canvas_icon_class":"icon-lti","icon_url":"https://office365-iad-prod.instructure.com/images/office365_icon.png","message_type":"ContentItemSelectionRequest","text":"Office 365","url":"https://office365-iad-prod.instructure.com/lti/homework-submission-content-item","label":"Office 365","selection_width":800,"selection_height":400},"link_selection":{"enabled":"true","message_type":"ContentItemSelectionRequest","selection_height":600,"selection_width":900,"text":"Office 365","url":"https://office365-iad-prod.instructure.com/lti/module-content-item","label":"Office 365","icon_url":"https://office365-iad-prod.instructure.com/images/office365_icon.png"},"migration_selection":null,"module_menu":null,"post_grades":null,"quiz_menu":null,"resource_selection":null,"tool_configuration":null,"user_navigation":null,"wiki_page_menu":null,"icon_url":"https://office365-iad-prod.instructure.com/images/office365_icon.png","not_selectable":false}],"EULA_URL":null,"CONDITIONAL_RELEASE_SERVICE_ENABLED":true,"CONDITIONAL_RELEASE_ENV":{"jwt":"ZXlKaGJHY2lPaUprYVhJaUxDSmxibU1pT2lKQk1qVTJSME5OSW4wLi5JYnpEczh5Mmp6ODhIZ0lILkI5X3E1WjlHd1FSZlZQNDNFQ0RJZzlBeENzMWRISnRTdTJud2xwejZvcVlLUkl1bEs5N2tOV1RsYTVCb25INlRNTEVQTm53ZTg2SFRaaWE4OGZnYlJzRWl1cGZ6VkFNRmhzUXJhVzBkUm4yTE52YVA1c1dwYW9rWEVwenJkcmRfdzRvaU9kSzA5NUk3d2xNX0ZzZ0FBWmItdlZ1SUFQYk14RWxqNE9jQjlfR3dOU2NNbjBMeGJMajNmOVVvT0lYYUJkOGQyR1VnYU85WVZfSm8wZ29FWnJ2d0tBd0VOb3pjakV1VTg3NmdxM0JIenByVFE0Zm5NRlBVQ3RhUVlhWjhyRnhCNnljb0hSMlhuSGs4Y184TzEtbUFSdi1NclRJd3hiYzE5ZWdOMHBLbDBqOUd5S1VpbGY4YXBoUGhFR0F1U1JvV3R1QVRxdnhEQVp6YkRNbFpBOGVDdHBlZjBOampOaGxQUG5oUFRMQTdoRDdTRXhiNlBUVmZweTU0eElYaXpPb01PRFdVRU40RnZYS2VOemk2TFltVEhRZ0NmUy1KQnNoakRzaDkyUmJZbmxDak40UHBrYTgybmFJUXRwb25TMENRTWI0S2xTc290THhSRWpsLUZVLUticDVWLTFFOEM2U1VpdUpzb283MTVKaV9FeWhyUUhJU2FXQV9Wc1RzVWNXZmM0d2c0ci16OEtSNHFEazBDT3Mxd0NhWGUzZndUalNzRzBIUWxDWTRYZzFseU5HaGhhSHVIZzRHd2FWRmt3M21zTG80S2Nlblpsb0pBdmZtRl95amtYVG04QkdzM0FrZy1tUXJJVUFXdlV2VTBNSkl4aGhVdkRxY3p5ZW10UTBSSXpsSGhmYWNORW41ZHdORWpUTmd2aU9ZS3otRzdrTnBheFJJU3F3RkdYbDdhU2tRU3dMUXp1dFRtdjNwZ2R6Q2hVckxMZVY5akZnUnRSZXBVNG81ZmU2clE3NEhiRm5DOGNTTk12Vk5HV1B0ZjVzY1lydjJRUjBZcUFsSXl2OGRJR3VKNGdscTF3ei0wTzJraGY4QVJuNW90UktmN2xjQ3dUZ0EwZ2tfRlNjLWZmb2w4UndRcjdhM0ZzNTBnN1JfQnVGUXZZbXViWHNVUFYwZ0lKcUVOeVo4MXRaaVRhdEtrbnZPV1pjS25wQlhMbk1rLVFFakQyd2hpV0dNN1JQTFVGVFFMb3FIMHBrVDFidHVCdkFYaUc5RFVfTlZlOGxabjZqR01TVkVJSEtkckRIUmZQV0EyMlZvdlZuWmNQcVNPdlNCdW4xc3h0VWRXZDJ5VlcwRGkwNGJTbm5sY3JFTWo4MENqcHNYWEkxSmg0SWlKNGhCS2lTeE9hRFFQQ3lINlFETENScS1pdldaZjZVcjZ1encwRDFBclBqWFVlNkJKYkh3al9yODNpN00ycTVRVnpFdFA5TUluMWE0X2tIX1puRXhqc0E3TGlSZHU2Nks3dnlHZXpVdFZMOHlPZUNxVkcyNXJsbUQ3eHVRNjV5bnN3WnpfaXlUcjdmTTNjR2Z4Z3JXZTJRZFRlNEhURXQwaTRocDFlcTBwMW1HbWt3ZkoxUk9YdU1kLU4wbGdUdVZwTXNMazRrYmt6VWV4alNFQ0RleEtIZmlLbUZ2d29NX0ZVSWQtcjdwSmM4Y1hQNnFXdzhCanlOYmV0aGdldTNVR0R6YlQ1T2hkMGJOOXFhUTlVRzZTQlRsMU9iOERQRkFfSG5JSFNsaDk4ZEh5ZHowTnlDT3BROHZERTRjbElJRVlLVUJIdW9Jd0FiV00yZTdhVjR5RnVmVlN5dnAtU2ZYeGYwZU5wMTY3SWdMM0huLURyT18yOFRfY1I5SmtIZ2c1V04yamMxVUJwMlRUemVDQ0hva2E2aUk5aVlWQ1VlTXVaaG5TWEVjV2VDZUY4WFpFZ003S0o1X0lLSFJxQ21UZDBlcmNnZ1ZKMFNkNUYzOXhpcnJRZ2VOYVFXTEc4b1hjNjJPMkhVRnZObWg2YWl2QUxNUVBocFQwY1BJRERFMkQ5eE9LTjFyZVFNLTNZRWd4cHFZUmJ0a0NKODVES3lEUmRqaG9IbXNSeGViVEk3YnMxa2dtdGtOUW81NkNfWXBfbFhYUkRBT1gyNEdzQW1VV0ViazhLMVBSUnRyMUNVZDRidWVNRVN5eUlSZzJUZ1dQR2p6Zmg4U1Z4U0d3UlVBRzBCbjZJblpBS1RTb1pxVUZLQkJEUkVPUER4NGRTSzRwTjJnd1p5MU5CbkNlTnNLek5ndXpuWnBKVTR3MGN5ZTBXUG44QmNrVnZSZ0JOdjZQSEFoS2FXZlJTX3FiU212TUpGaGN6bUY4MG1HWGFweTVGUU9NWWpILXR2UGk1eXB4UHgzUkZHYzQtNXVBOEdqM2Nua2hpN1pIekdVNUpKV2pDYWszUW1lbVMzTk9wcHJIaVNORWR2OE80b1JYMVNGa0d5YklJd1ZRdTJ3RmRjMTNCSHZwWVdmZ0MyTVFob2pLblRmeUhfTW5PZ3dSaWNPdlFzRDFRTG5fMWpYVW9FQl9LVk9vaHFBdW1tSUZMMEZZTmFnZFZJVHpEa0cxdGdmVC1XalJTdXE2X1hlNHA3LWZkdnh3WnBfU0NuVXZqekdwLTBHelJDWi0zUDNqUElPYU45aFFaUC01Y3ZtNW0tWHdHY01GSE80N3NnRG1EZWFoM0dEUFlDcnUtVkgwcHc1RVA0Wms4bExrYUd1T29KOWlCZjZVTW5mdGtrcWthS1lNcVhsNTVCQUtwekxNWlhYbmFFZ2p3UkFlVVVhY3podVVUTWpRTm9SQ1p3VTQ5ZXdrTFEyazEzQWpNLUZ0UmtvWEFudXpQTUdDOWFYNDNlOXFLY0ZCSU9RM1Jnd1REcXJPcDNqa0k1NUlHRENWWUZFMVRndVZhV19RNFh3LTc0Y2l3Lmp3T3RoSVhxbWM5TjcweEM1TXl0SFE=","assignment":{"id":"62120","title":"Assignment 1: Supervised Learning","description":"\u003cp\u003e\u003cspan style=\"font-size: 14pt;\"\u003e\u003cstrong\u003eAssignment 1: Supervised Learning\u003c/strong\u003e\u003c/span\u003e\u003c/p\u003e\r\n\u003cp\u003eReleased: 09/04/18\u003cbr\u003eDue: 09/25/18, beginning of class\u003c/p\u003e\r\n\u003cp\u003eThe assignment is worth 15% of your final grade.\u003c/p\u003e\r\n\u003cp\u003eCollaboration: You must complete and turn in this assignment individually. The “whiteboard policy\" is in effect. (Please see the collaboration policy on the course website for details).\u003c/p\u003e\r\n\u003cp\u003e\u003cstrong\u003e \u003c/strong\u003e\u003c/p\u003e\r\n\u003cp\u003e\u003cspan style=\"font-size: 14pt;\"\u003e\u003cstrong\u003eOverview\u003c/strong\u003e\u003c/span\u003e\u003c/p\u003e\r\n\u003cp\u003eThe purpose of this project is to explore several fundamental techniques in supervised learning. It is important to realize that understanding an algorithm or technique requires understanding how it behaves under a variety of circumstances. As such, you will be asked to \"implement\" some simple learning algorithms (for sufficiently small values of implement, meaning I don't really want you to implement anything at all), and to compare their performance.\u003c/p\u003e\r\n\u003cp\u003eYou may program in any language that you wish (we do prefer broadly-used or revered languages like java, matlab, python, Lisp, R, or even C++; let us know beforehand if you're going to use something else). In any case \u003cem\u003eit is your responsibility\u003c/em\u003e to make sure that the code can run on the standard CoC linux boxes. Re-read that last sentence. Next, ask yourself what it could possibly mean in practice.  Well, in practice, it means that if a TA needs to recreate your experiments, it will be possible (as detailed below) and if it isn't possible because you used some obscure language you made up based on HTML 2.0, well, that's just not going to work out.  Some of you who have been out of school for a long time and/or are used to assignments where you are told exactly what to do will fret about this requirement and try to infer more than is there. Don't. Use standard packages or languages and you'll never have to even figure out how to log into any CoC machine. \u003c/p\u003e\r\n\u003cp\u003e\u003cstrong\u003e\u003cem\u003eRead everything below carefully!\u003c/em\u003e\u003c/strong\u003e\u003cstrong\u003e \u003c/strong\u003e\u003c/p\u003e\r\n\u003cp\u003e \u003c/p\u003e\r\n\u003cp\u003e\u003cspan style=\"font-size: 14pt;\"\u003e\u003cstrong\u003eInstructions\u003c/strong\u003e\u003c/span\u003e\u003c/p\u003e\r\n\u003cp\u003eYou will implement five learning algorithms. They are:\u003c/p\u003e\r\n\u003cul\u003e\r\n\u003cli\u003eDecision trees with some form of pruning\u003c/li\u003e\r\n\u003cli\u003eNeural networks\u003c/li\u003e\r\n\u003cli\u003eBoosting\u003c/li\u003e\r\n\u003cli\u003eSupport Vector Machines\u003c/li\u003e\r\n\u003cli\u003e\n\u003cem\u003ek\u003c/em\u003e-nearest neighbors\u003c/li\u003e\r\n\u003c/ul\u003e\r\n\u003cp\u003eEach algorithm is described in detail in your textbook, the handouts, and all over the web. In fact, instead of implementing the algorithms yourself, you may (and by may I mean should) use software packages that you find elsewhere; however, if you do so you should provide proper attribution. Also, you will note that you have to do some fiddling to get good results, graphs and such, so even if you use another's package, you may need to modify it in various ways.\u003c/p\u003e\r\n\u003cp\u003e\u003cstrong\u003eDecision Trees.\u003c/strong\u003e For the decision tree, you should implement or steal a decision tree algorithm (and by \"implement or steal\" I mean \"steal\"). Be sure to use some form of pruning. You are not required to use information gain (for example, there is something called the GINI index that is sometimes used) to split attributes, but you should describe whatever it is that you do use.\u003c/p\u003e\r\n\u003cp\u003e\u003cstrong\u003eNeural Networks.\u003c/strong\u003e For the neural network you should\u003cspan style=\"text-decoration: line-through;\"\u003e implement or\u003c/span\u003e steal your favorite kind of network and training algorithm. You may use networks of nodes with as many layers as you like and any activation function you see fit.\u003c/p\u003e\r\n\u003cp\u003e\u003cstrong\u003eBoosting.\u003c/strong\u003e Implement==steal a boosted version of your decision trees. As before, you will want to use some form of pruning, but presumably because you're using boosting you can afford to be much more aggressive about your pruning.\u003c/p\u003e\r\n\u003cp\u003e\u003cstrong\u003eSupport Vector Machines.\u003c/strong\u003e You should implement a SVM (for a sufficiently loose definition of implement including \"download\"). This should be done in such a way that you can swap out kernel functions. I'd like to see results using at least two.\u003c/p\u003e\r\n\u003cp\u003e\u003cstrong\u003e\u003cem\u003ek\u003c/em\u003e\u003c/strong\u003e\u003cstrong\u003e-Nearest Neighbors.\u003c/strong\u003e You should \"implement\" \u003cem\u003ek\u003c/em\u003eNN. Use different values of \u003cem\u003ek\u003c/em\u003e.\u003c/p\u003e\r\n\u003cp\u003e\u003cstrong\u003eTesting.\u003c/strong\u003e In addition to implementing (wink), the algorithms described above, you must design two interesting classification problems. For the purposes of this assignment, a classification problem is just a set of training examples and a set of test examples. I don't care where you get the data. You can download some, take some from your own research, or make some up on your own. Be careful about the data you choose, though. You'll have to explain why they are interesting, use them in later assignments, and come to really care about them.\u003c/p\u003e\r\n\u003cp\u003e\u003cstrong\u003e \u003c/strong\u003e\u003c/p\u003e\r\n\u003cp\u003e\u003cspan style=\"font-size: 14pt;\"\u003e\u003cstrong\u003eWhat to Turn In\u003c/strong\u003e\u003c/span\u003e\u003c/p\u003e\r\n\u003cp\u003eYou must submit via Canvas a tar or zip file named \u003cem\u003eyourgtaccount\u003c/em\u003e.{zip,tar,tar.gz} that contains a single folder or directory named \u003cem\u003eyourgtaccount \u003c/em\u003e(where\u003cem\u003e gtaccount \u003c/em\u003eis probably something like\u003cem\u003e gtg7577b \u003c/em\u003eor maybe\u003cem\u003e ci16\u003c/em\u003e). That directory in turn contains:\u003c/p\u003e\r\n\u003col\u003e\r\n\u003cli\u003ea file named \u003cem\u003eREADME.txt\u003c/em\u003e containing instructions for running your code (see note below)\u003c/li\u003e\r\n\u003cli\u003eyour code (see note below)\u003c/li\u003e\r\n\u003cli\u003ea file named \u003cem\u003eyourgtaccount\u003c/em\u003e-\u003cem\u003eanalysis.pdf\u003c/em\u003e containing your writeup\u003c/li\u003e\r\n\u003cli\u003eany supporting files you need, such as your training and test sets (see note below).\u003c/li\u003e\r\n\u003c/ol\u003e\r\n\u003cp\u003e\u003cstrong\u003eNote below\u003c/strong\u003e: if the data are way, way, too huge for submitting, see if you can arrange for an URL. This also goes for code, too. Submitting all of Weka isn't necessary, for example, because I can get it myself; however, you should at least submit any files you found necessary to change and enough support and explanation so we could reproduce your results if we really wanted to do so. In any case, include all the information in \u003cem\u003eREADME.txt\u003c/em\u003e\u003c/p\u003e\r\n\u003cp\u003eThe file \u003cem\u003eyourgtaccount\u003c/em\u003e-\u003cem\u003eanalysis.pdf\u003c/em\u003e should contain:\u003c/p\u003e\r\n\u003cul\u003e\r\n\u003cli\u003e\n\u003cstrong\u003eA description of your two classification problems, and why they are interesting\u003c/strong\u003e. Think hard about this. To be at all interesting, the problems should be non-trivial on the one hand, but capable of admitting comparisons and analysis of the various algorithms on the other. In other words, when you run the supervised learning algorithms on the datasets, they should give different results.\u003cbr\u003e\u003cbr\u003e\n\u003c/li\u003e\r\n\u003cli\u003e\n\u003cstrong\u003eThe training and testing error rates you obtained running the various learning algorithms on your two problems\u003c/strong\u003e. At the very least you should include graphs that show performance on both training and test data. For iterative algorithms, you should graph the performance of the algorithm on the y-axis (you should choose an appropriate performance metric) compared against training time (you should choose an appropriate notion of \"time,\" epochs, iterations?) on the x-axis. You should also plot performance as a function of training dataset size (note that this implies that you need to design a classification problem that has more than a trivial amount of data).\u003cbr\u003e\u003cbr\u003e\n\u003c/li\u003e\r\n\u003cli\u003e\n\u003cstrong\u003eAnalyses of your results\u003c/strong\u003e. Why did you get the results you did? Compare and contrast the different algorithms. What sort of changes might you make to each of those algorithms to improve performance? How fast were they in terms of wall clock time? Iterations? Would cross validation help (and if it would, why didn't you implement it?)? How much performance was due to the problems you selected? How about the values you chose for learning rates, stopping criteria, regularization, pruning methods, and so forth (and why doesn't your analysis show results for the different values you chose?)? Which algorithm performed best? How do you define best? Be creative and think of as many questions you can, and as many answers as you can.\u003c/li\u003e\r\n\u003c/ul\u003e\r\n\u003cp\u003eFor the sanity of your graders, please keep your analysis as short as possible while still covering the requirements of the assignment: to facilitate this sanity,\u003cstrong\u003e \u003cu\u003eanalysis writeup is limited to 12 pages\u003c/u\u003e.\u003c/strong\u003e\u003c/p\u003e\r\n\u003cp\u003e \u003c/p\u003e\r\n\u003cp\u003e\u003cspan style=\"font-size: 14pt;\"\u003e\u003cstrong\u003eGrading Criteria\u003c/strong\u003e\u003c/span\u003e\u003c/p\u003e\r\n\u003cp\u003eYou are being graded on your analysis more than anything else. Roughly speaking, implementing everything and getting it to run is worth maybe 0% of the grade on this assignment (I know you don't believe me, but in fact, steal the code; I not only don't care, I am encouraging you to use one of the many packages available both from the resources page and on the web). Of course, analysis without proof of working code makes the analysis suspect.\u003c/p\u003e\r\n\u003cp\u003eThe key thing is that your explanations should be both thorough and concise. Imagine you are writing a paper for the major conference in your field the year you will be graduating and you need to impress all those folks who will be deciding whether to interview you later. You don't want them to think you're shallow do you? Or that you're incapable of coming up with interesting classification problems, right? And you surely don't want them to think that you make up for a lack of content by blathering on about irrelevant aspects of your work? Of course not.\u003c/p\u003e\r\n\u003cp\u003eFinally, I'd like to point out that I am very particular about the format of the assignments. Follow the directions carefully. Failure to turn in files without the proper naming scheme, or anything else that makes the graders' lives unduly hard is simply going to lead to an ignored assignment. I am remarkably inflexible about this. Also, this is a long assignment and there will be no late assignments accepted, so start now. Have fun. One day you'll look back on this and smile. There may be tears, but they will be tears of joy.\u003c/p\u003e","points_possible":100.0,"grading_type":"points","submission_types":"online_upload","grading_scheme":null},"stats_url":"https://conditional-release-iad-prod.instructure.com/stats","locale":"en","editor_url":"https://conditional-release-iad-prod.instructure.com/javascripts/generated/conditional_release_editor.bundle.js","base_url":"https://conditional-release-iad-prod.instructure.com/","context_id":"26435","rule":null},"SUBMIT_ASSIGNMENT":{"ALLOWED_EXTENSIONS":[],"ID":62120,"GROUP_ID_FOR_USER":null},"badge_counts":{"submissions":0},"notices":[]};
+</script>
+
+<script src="https://du11hjcvx0uqb.cloudfront.net/dist/webpack-production/navigation_header.bundle-549b1681b9.js" defer="defer"></script>
+
+
+</div> <!-- #application -->
+</body>
+</html>

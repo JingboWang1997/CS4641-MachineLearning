@@ -31,7 +31,6 @@ public class wineTest {
     private static Instance[] trainingInstances = initializeTrainingInstances();
     private static Instance[] testInstances = initializeTestInstances();
 
-    private static int inputLayer = 11, hiddenLayer = 5, outputLayer = 1, trainingIterations = 1000;
     private static BackPropagationNetworkFactory factory = new BackPropagationNetworkFactory();
     
     private static ErrorMeasure measure = new SumOfSquaresError();
@@ -48,79 +47,274 @@ public class wineTest {
 
     private static DecimalFormat df = new DecimalFormat("0.000");
 
+    // param tuning
+    private static int inputLayer = 11, hiddenLayer1 = 6, hiddenLayer2 = 9, outputLayer = 1, trainingIterationsRHC = 4000, trainingIterationsSA = 4000, trainingIterationsGA = 800;
+    private static int randomRestart = 40;
+    private static double startingTemperature = 1E4, coolingRate = .3;
+    private static int populationSize = 100, numMate = 10, numMutate = 10;
+
     public static void main(String[] args) {
         for(int i = 0; i < oa.length; i++) {
             networks[i] = factory.createClassificationNetwork(
-                new int[] {inputLayer, hiddenLayer, outputLayer});
+                new int[] {inputLayer, hiddenLayer1, hiddenLayer2, outputLayer});
             nnop[i] = new NeuralNetworkOptimizationProblem(trainingSet, networks[i], measure);
         }
 
         oa[0] = new RandomizedHillClimbing(nnop[0]);
-        oa[1] = new SimulatedAnnealing(1E11, .95, nnop[1]);
-        oa[2] = new StandardGeneticAlgorithm(200, 100, 10, nnop[2]);
+        oa[1] = new SimulatedAnnealing(startingTemperature, coolingRate, nnop[1]);
+        oa[2] = new StandardGeneticAlgorithm(populationSize, numMate, numMutate, nnop[2]);
+
+        int[] rrArray = new int[] {25, 40, 50};
+
+        double[][] saArray = new double[3][2];
+
+        saArray[0] = new double[] {1E6, 0.3};
+        saArray[1] = new double[] {1E6, 0.9};
+        saArray[2] = new double[] {1E12, 0.9};
+
+        int[][] gaArray = new int[5][2];
+        gaArray[0] = new int[] {50, 50};
+        gaArray[1] = new int[] {50, 70};
+        gaArray[2] = new int[] {10, 70};
+        gaArray[3] = new int[] {30, 30};
+        gaArray[4] = new int[] {50, 30};
+
 
         for(int i = 0; i < oa.length; i++) {
-            Instance optimalInstance = null;
-//            if (i == 0) {
-            double start = System.nanoTime(), end, trainingTime, testingTime, testCorrect = 0, testIncorrect = 0, trainingCorrect = 0, trainingIncorrect = 0;
-            int randomRestart = 10;
-            optimalInstance = train(oa[i], networks[i], oaNames[i], randomRestart); //trainer.train();
-            end = System.nanoTime();
-            trainingTime = end - start;
-            trainingTime /= Math.pow(10, 9);
+            if (i == 3) {
+                for (int rrIndex = 0; rrIndex < rrArray.length; rrIndex++) {
+                    results = "";
+                    System.out.println("RHC with random restart: " + rrArray[rrIndex]);
+                    oa[0] = new RandomizedHillClimbing(nnop[0]);
+                    Instance optimalInstance = null;
+                    double start = System.nanoTime(), end, trainingTime, testingTime, testCorrect = 0, testIncorrect = 0, trainingCorrect = 0, trainingIncorrect = 0;
+                    optimalInstance = train(oa[i], networks[i], oaNames[i], rrArray[rrIndex]); //trainer.train();
+                    end = System.nanoTime();
+                    trainingTime = end - start;
+                    trainingTime /= Math.pow(10, 9);
 
-            networks[i].setWeights(optimalInstance.getData());
+                    networks[i].setWeights(optimalInstance.getData());
 
-            double trainingPredicted, trainingActual;
-            for (int j = 0; j < trainingInstances.length; j++) {
-                networks[i].setInputValues(trainingInstances[j].getData());
-                networks[i].run();
+                    double trainingPredicted, trainingActual;
+                    for (int j = 0; j < trainingInstances.length; j++) {
+                        networks[i].setInputValues(trainingInstances[j].getData());
+                        networks[i].run();
 
-                trainingActual = Double.parseDouble(trainingInstances[j].getLabel().toString());
-                trainingPredicted = Double.parseDouble(networks[i].getOutputValues().toString());
+                        trainingActual = Double.parseDouble(trainingInstances[j].getLabel().toString());
+                        trainingPredicted = Double.parseDouble(networks[i].getOutputValues().toString());
 
-                double trash = Math.abs(trainingPredicted - trainingActual) < 0.5 ? trainingCorrect++ : trainingIncorrect++;
+                        double trash = Math.abs(trainingPredicted - trainingActual) < 0.5 ? trainingCorrect++ : trainingIncorrect++;
 
+                    }
+
+                    double testPredicted, testActual;
+                    start = System.nanoTime();
+                    for (int j = 0; j < testInstances.length; j++) {
+                        networks[i].setInputValues(testInstances[j].getData());
+                        networks[i].run();
+
+                        testActual = Double.parseDouble(testInstances[j].getLabel().toString());
+                        testPredicted = Double.parseDouble(networks[i].getOutputValues().toString());
+
+                        double trash = Math.abs(testPredicted - testActual) < 0.5 ? testCorrect++ : testIncorrect++;
+
+                    }
+                    end = System.nanoTime();
+                    testingTime = end - start;
+                    testingTime /= Math.pow(10, 9);
+
+                    results += "\nResults for " + oaNames[i] + ": \nTraining:\nCorrectly classified " + trainingCorrect + " instances." +
+                            "\nIncorrectly classified " + trainingIncorrect + " instances.\nPercent correctly classified: "
+                            + df.format(trainingCorrect / (trainingCorrect + trainingIncorrect) * 100) + "%\nTest:\nCorrectly classified " + testCorrect + " instances." +
+                            "\nIncorrectly classified " + testIncorrect + " instances.\nPercent correctly classified: "
+                            + df.format(testCorrect / (testCorrect + testIncorrect) * 100) + "%\nTraining time: " + df.format(trainingTime)
+                            + " seconds\nTesting time: " + df.format(testingTime) + " seconds\n";
+                    System.out.println(results + "RHC with random restart: " + rrArray[rrIndex] + "\n");
+                }
+            } else if (i == 1) {
+                for (int saIndex = 0; saIndex < saArray.length; saIndex++) {
+                    for (int run = 0; run < 3; run++) {
+                        results = "";
+                        System.out.println("run: " + run);
+                        System.out.println("SA with temperature: " + saArray[saIndex][0] + " and cooling: " + saArray[saIndex][1]);
+                        oa[1] = new SimulatedAnnealing(saArray[saIndex][0], saArray[saIndex][1], nnop[1]);
+                        Instance optimalInstance = null;
+                        double start = System.nanoTime(), end, trainingTime, testingTime, testCorrect = 0, testIncorrect = 0, trainingCorrect = 0, trainingIncorrect = 0;
+                        optimalInstance = train(oa[i], networks[i], oaNames[i], 1); //trainer.train();
+                        end = System.nanoTime();
+                        trainingTime = end - start;
+                        trainingTime /= Math.pow(10, 9);
+
+                        networks[i].setWeights(optimalInstance.getData());
+
+                        double trainingPredicted, trainingActual;
+                        for (int j = 0; j < trainingInstances.length; j++) {
+                            networks[i].setInputValues(trainingInstances[j].getData());
+                            networks[i].run();
+
+                            trainingActual = Double.parseDouble(trainingInstances[j].getLabel().toString());
+                            trainingPredicted = Double.parseDouble(networks[i].getOutputValues().toString());
+
+                            double trash = Math.abs(trainingPredicted - trainingActual) < 0.5 ? trainingCorrect++ : trainingIncorrect++;
+
+                        }
+
+                        double testPredicted, testActual;
+                        start = System.nanoTime();
+                        for (int j = 0; j < testInstances.length; j++) {
+                            networks[i].setInputValues(testInstances[j].getData());
+                            networks[i].run();
+
+                            testActual = Double.parseDouble(testInstances[j].getLabel().toString());
+                            testPredicted = Double.parseDouble(networks[i].getOutputValues().toString());
+
+                            double trash = Math.abs(testPredicted - testActual) < 0.5 ? testCorrect++ : testIncorrect++;
+
+                        }
+                        end = System.nanoTime();
+                        testingTime = end - start;
+                        testingTime /= Math.pow(10, 9);
+
+                        results += "\nResults for " + oaNames[i] + ": \nTraining:\nCorrectly classified " + trainingCorrect + " instances." +
+                                "\nIncorrectly classified " + trainingIncorrect + " instances.\nPercent correctly classified: "
+                                + df.format(trainingCorrect / (trainingCorrect + trainingIncorrect) * 100) + "%\nTest:\nCorrectly classified " + testCorrect + " instances." +
+                                "\nIncorrectly classified " + testIncorrect + " instances.\nPercent correctly classified: "
+                                + df.format(testCorrect / (testCorrect + testIncorrect) * 100) + "%\nTraining time: " + df.format(trainingTime)
+                                + " seconds\nTesting time: " + df.format(testingTime) + " seconds\n";
+                        System.out.println(results);
+                    }
+                }
+            } else if (i == 2) {
+                for (int gaIndex = 0; gaIndex < gaArray.length; gaIndex++) {
+                    for (int run = 0; run < 3; run++) {
+                        results = "";
+                        System.out.println("run: " + run);
+                        System.out.println("GA with mate: " + gaArray[gaIndex][0] + " and mutate: " + gaArray[gaIndex][1]);
+                        oa[2] = new StandardGeneticAlgorithm(100, gaArray[gaIndex][0], gaArray[gaIndex][1], nnop[2]);
+                        Instance optimalInstance = null;
+                        double start = System.nanoTime(), end, trainingTime, testingTime, testCorrect = 0, testIncorrect = 0, trainingCorrect = 0, trainingIncorrect = 0;
+                        optimalInstance = train(oa[i], networks[i], oaNames[i], 1); //trainer.train();
+                        end = System.nanoTime();
+                        trainingTime = end - start;
+                        trainingTime /= Math.pow(10, 9);
+
+                        networks[i].setWeights(optimalInstance.getData());
+
+                        double trainingPredicted, trainingActual;
+                        for (int j = 0; j < trainingInstances.length; j++) {
+                            networks[i].setInputValues(trainingInstances[j].getData());
+                            networks[i].run();
+
+                            trainingActual = Double.parseDouble(trainingInstances[j].getLabel().toString());
+                            trainingPredicted = Double.parseDouble(networks[i].getOutputValues().toString());
+
+                            double trash = Math.abs(trainingPredicted - trainingActual) < 0.5 ? trainingCorrect++ : trainingIncorrect++;
+
+                        }
+
+                        double testPredicted, testActual;
+                        start = System.nanoTime();
+                        for (int j = 0; j < testInstances.length; j++) {
+                            networks[i].setInputValues(testInstances[j].getData());
+                            networks[i].run();
+
+                            testActual = Double.parseDouble(testInstances[j].getLabel().toString());
+                            testPredicted = Double.parseDouble(networks[i].getOutputValues().toString());
+
+                            double trash = Math.abs(testPredicted - testActual) < 0.5 ? testCorrect++ : testIncorrect++;
+
+                        }
+                        end = System.nanoTime();
+                        testingTime = end - start;
+                        testingTime /= Math.pow(10, 9);
+
+                        results += "\nResults for " + oaNames[i] + ": \nTraining:\nCorrectly classified " + trainingCorrect + " instances." +
+                                "\nIncorrectly classified " + trainingIncorrect + " instances.\nPercent correctly classified: "
+                                + df.format(trainingCorrect / (trainingCorrect + trainingIncorrect) * 100) + "%\nTest:\nCorrectly classified " + testCorrect + " instances." +
+                                "\nIncorrectly classified " + testIncorrect + " instances.\nPercent correctly classified: "
+                                + df.format(testCorrect / (testCorrect + testIncorrect) * 100) + "%\nTraining time: " + df.format(trainingTime)
+                                + " seconds\nTesting time: " + df.format(testingTime) + " seconds\n";
+                        System.out.println(results);
+                    }
+                }
             }
-
-            double testPredicted, testActual;
-            start = System.nanoTime();
-            for (int j = 0; j < testInstances.length; j++) {
-                networks[i].setInputValues(testInstances[j].getData());
-                networks[i].run();
-
-                testActual = Double.parseDouble(testInstances[j].getLabel().toString());
-                testPredicted = Double.parseDouble(networks[i].getOutputValues().toString());
-
-                double trash = Math.abs(testPredicted - testActual) < 0.5 ? testCorrect++ : testIncorrect++;
-
-            }
-            end = System.nanoTime();
-            testingTime = end - start;
-            testingTime /= Math.pow(10, 9);
-
-            results += "\nResults for " + oaNames[i] + ": \nTraining:\nCorrectly classified " + trainingCorrect + " instances." +
-                    "\nIncorrectly classified " + trainingIncorrect + " instances.\nPercent correctly classified: "
-                    + df.format(trainingCorrect / (trainingCorrect + trainingIncorrect) * 100) + "\nTest:\nCorrectly classified " + testCorrect + " instances." +
-                    "\nIncorrectly classified " + testIncorrect + " instances.\nPercent correctly classified: "
-                    + df.format(testCorrect / (testCorrect + testIncorrect) * 100) + "%\nTraining time: " + df.format(trainingTime)
-                    + " seconds\nTesting time: " + df.format(testingTime) + " seconds\n";
-            if (oaNames[i].equals("RHC")) {
-                results += randomRestart + " random restarts";
-            }
-//            }
         }
 
-        System.out.println(results);
+//        for(int i = 0; i < oa.length; i++) {
+//            Instance optimalInstance = null;
+//            double start = System.nanoTime(), end, trainingTime, testingTime, testCorrect = 0, testIncorrect = 0, trainingCorrect = 0, trainingIncorrect = 0;
+//            optimalInstance = train(oa[i], networks[i], oaNames[i], randomRestart); //trainer.train();
+//            end = System.nanoTime();
+//            trainingTime = end - start;
+//            trainingTime /= Math.pow(10, 9);
+//
+//            networks[i].setWeights(optimalInstance.getData());
+//
+//            double trainingPredicted, trainingActual;
+//            for (int j = 0; j < trainingInstances.length; j++) {
+//                networks[i].setInputValues(trainingInstances[j].getData());
+//                networks[i].run();
+//
+//                trainingActual = Double.parseDouble(trainingInstances[j].getLabel().toString());
+//                trainingPredicted = Double.parseDouble(networks[i].getOutputValues().toString());
+//
+//                double trash = Math.abs(trainingPredicted - trainingActual) < 0.5 ? trainingCorrect++ : trainingIncorrect++;
+//
+//            }
+//
+//            double testPredicted, testActual;
+//            start = System.nanoTime();
+//            for (int j = 0; j < testInstances.length; j++) {
+//                networks[i].setInputValues(testInstances[j].getData());
+//                networks[i].run();
+//
+//                testActual = Double.parseDouble(testInstances[j].getLabel().toString());
+//                testPredicted = Double.parseDouble(networks[i].getOutputValues().toString());
+//
+//                double trash = Math.abs(testPredicted - testActual) < 0.5 ? testCorrect++ : testIncorrect++;
+//
+//            }
+//            end = System.nanoTime();
+//            testingTime = end - start;
+//            testingTime /= Math.pow(10, 9);
+//
+//            results += "\nResults for " + oaNames[i] + ": \nTraining:\nCorrectly classified " + trainingCorrect + " instances." +
+//                    "\nIncorrectly classified " + trainingIncorrect + " instances.\nPercent correctly classified: "
+//                    + df.format(trainingCorrect / (trainingCorrect + trainingIncorrect) * 100) + "%\nTest:\nCorrectly classified " + testCorrect + " instances." +
+//                    "\nIncorrectly classified " + testIncorrect + " instances.\nPercent correctly classified: "
+//                    + df.format(testCorrect / (testCorrect + testIncorrect) * 100) + "%\nTraining time: " + df.format(trainingTime)
+//                    + " seconds\nTesting time: " + df.format(testingTime) + " seconds\n";
+//            if (oaNames[i].equals("RHC")) {
+//                results += randomRestart + " random restarts\n";
+//            }
+//        }
+//
+//        System.out.println(results);
     }
 
     private static Instance train(OptimizationAlgorithm oa, BackPropagationNetwork network, String oaName, int numRandomRestart) {
+
+        boolean writingEnable = true;
+        if (oaName.equals("RHC")) {
+            writingEnable = false;
+        }
+
+
         System.out.println("\nError results for " + oaName + "\n---------------------------");
         Instance optimal = null;
         double optimalVal = Double.NEGATIVE_INFINITY;
 
+        numRandomRestart = oaName.equals("RHC") ? numRandomRestart : 1;
         for (int r = 0; r < numRandomRestart; r++) {
-            for(int i = 0; i < trainingIterations; i++) {
+            int iterations = 0;
+            if (oaName.equals("GA")) {
+                iterations = trainingIterationsGA;
+            } else if (oaName.equals("SA")) {
+                iterations = trainingIterationsSA;
+            } else {
+                iterations = trainingIterationsRHC;
+            }
+            for(int i = 0; i < iterations; i++) {
                 oa.train();
 
                 Instance optimalInstance = oa.getOptimal();
@@ -135,8 +329,9 @@ public class wineTest {
                     output.setLabel(new Instance(Double.parseDouble(network.getOutputValues().toString())));
                     error += measure.value(actual, output);
                 }
-
-                System.out.println(df.format(error));
+                if (writingEnable) {
+                    System.out.println(i + ": " + df.format(error));
+                }
             }
             Instance cur = oa.getOptimal();
             double curVal = nnop[0].value(cur);
@@ -144,7 +339,7 @@ public class wineTest {
                 optimal = cur;
                 optimalVal = curVal;
             }
-            System.out.println("random restart " + r + ": " + optimalVal);
+//            System.out.println("random restart (fitness value) " + r + ": " + optimalVal);
             oa = new RandomizedHillClimbing(nnop[0]);
         }
         return optimal;

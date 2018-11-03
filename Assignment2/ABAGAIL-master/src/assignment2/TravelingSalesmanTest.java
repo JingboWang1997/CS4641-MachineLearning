@@ -46,12 +46,15 @@ public class TravelingSalesmanTest {
         CrossoverFunction cf = new TravelingSalesmanCrossOver(ef);
         HillClimbingProblem hcp = new GenericHillClimbingProblem(ef, odd, nf);
         GeneticAlgorithmProblem gap = new GenericGeneticAlgorithmProblem(ef, odd, mf, cf);
-        
-        RandomizedHillClimbing rhc = new RandomizedHillClimbing(hcp);      
-        FixedIterationTrainer fit = new FixedIterationTrainer(rhc, 200000);
+
+        FixedIterationTrainer fit = null;
+        System.out.println("RHC");
+        RandomizedHillClimbing rhc = new RandomizedHillClimbing(hcp);
+        fit = new FixedIterationTrainer(rhc, 200000);
         fit.train();
         System.out.println(ef.value(rhc.getOptimal()));
-        
+
+
         SimulatedAnnealing sa = new SimulatedAnnealing(1E12, .95, hcp);
         fit = new FixedIterationTrainer(sa, 200000);
         fit.train();

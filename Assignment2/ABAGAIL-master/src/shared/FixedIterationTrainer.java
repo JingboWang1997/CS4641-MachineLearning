@@ -34,7 +34,7 @@ public class FixedIterationTrainer implements Trainer {
         double sum = 0;
         for (int i = 0; i < iterations; i++) {
             sum += trainer.train();
-            System.out.println(i + ": " + sum/(i+1));
+//            System.out.println(i + ": " + sum/(i+1));
         }
         return sum / iterations;
     }

@@ -50,20 +50,21 @@ public class TravelingSalesmanTest {
         FixedIterationTrainer fit = null;
         System.out.println("RHC");
         RandomizedHillClimbing rhc = new RandomizedHillClimbing(hcp);
-        fit = new FixedIterationTrainer(rhc, 200000);
+        fit = new FixedIterationTrainer(rhc, 4000);
         fit.train();
         System.out.println(ef.value(rhc.getOptimal()));
 
-
+        System.out.println("SA");
         SimulatedAnnealing sa = new SimulatedAnnealing(1E12, .95, hcp);
-        fit = new FixedIterationTrainer(sa, 200000);
+        fit = new FixedIterationTrainer(sa, 4000);
         fit.train();
         System.out.println(ef.value(sa.getOptimal()));
-        
-        StandardGeneticAlgorithm ga = new StandardGeneticAlgorithm(200, 150, 20, gap);
-        fit = new FixedIterationTrainer(ga, 1000);
+
+        System.out.println("GA");
+        StandardGeneticAlgorithm ga = new StandardGeneticAlgorithm(200, 50, 30, gap); // 150 20
+        fit = new FixedIterationTrainer(ga, 800);
         fit.train();
         System.out.println(ef.value(ga.getOptimal()));
-        
+//
     }
 }

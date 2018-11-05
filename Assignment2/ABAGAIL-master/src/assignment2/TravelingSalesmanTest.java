@@ -54,17 +54,17 @@ public class TravelingSalesmanTest {
         fit.train();
         System.out.println(ef.value(rhc.getOptimal()));
 
-        System.out.println("SA");
-        SimulatedAnnealing sa = new SimulatedAnnealing(1E12, .95, hcp);
-        fit = new FixedIterationTrainer(sa, 4000);
-        fit.train();
-        System.out.println(ef.value(sa.getOptimal()));
-
-        System.out.println("GA");
-        StandardGeneticAlgorithm ga = new StandardGeneticAlgorithm(200, 50, 30, gap); // 150 20
-        fit = new FixedIterationTrainer(ga, 800);
-        fit.train();
-        System.out.println(ef.value(ga.getOptimal()));
+//        System.out.println("SA");
+//        SimulatedAnnealing sa = new SimulatedAnnealing(1E12, .95, hcp);
+//        fit = new FixedIterationTrainer(sa, 4000);
+//        fit.train();
+//        System.out.println(ef.value(sa.getOptimal()));
+//
+//        System.out.println("GA");
+//        StandardGeneticAlgorithm ga = new StandardGeneticAlgorithm(200, 50, 30, gap); // 150 20
+//        fit = new FixedIterationTrainer(ga, 800);
+//        fit.train();
+//        System.out.println(ef.value(ga.getOptimal()));
 //
     }
 }

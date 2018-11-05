@@ -36,11 +36,11 @@ public class FlipFlopTest {
         ProbabilisticOptimizationProblem pop = new GenericProbabilisticOptimizationProblem(ef, odd, df);
 
         FixedIterationTrainer fit = null;
-//        System.out.println("RHC");
-//        RandomizedHillClimbing rhc = new RandomizedHillClimbing(hcp);
-//        fit = new FixedIterationTrainer(rhc, 4000);
-//        fit.train();
-//        System.out.println(ef.value(rhc.getOptimal()));
+        System.out.println("RHC");
+        RandomizedHillClimbing rhc = new RandomizedHillClimbing(hcp);
+        fit = new FixedIterationTrainer(rhc, 4000);
+        fit.train();
+        System.out.println(ef.value(rhc.getOptimal()));
 
         System.out.println("SA");
         SimulatedAnnealing sa = new SimulatedAnnealing(100, .95, hcp);
@@ -48,10 +48,10 @@ public class FlipFlopTest {
         fit.train();
         System.out.println(ef.value(sa.getOptimal()));
 
-//        System.out.println("GA");
-//        StandardGeneticAlgorithm ga = new StandardGeneticAlgorithm(200, 50, 10, gap);
-//        fit = new FixedIterationTrainer(ga, 4000);
-//        fit.train();
-//        System.out.println(ef.value(ga.getOptimal()));
+        System.out.println("GA");
+        StandardGeneticAlgorithm ga = new StandardGeneticAlgorithm(200, 50, 10, gap);
+        fit = new FixedIterationTrainer(ga, 4000);
+        fit.train();
+        System.out.println(ef.value(ga.getOptimal()));
     }
 }

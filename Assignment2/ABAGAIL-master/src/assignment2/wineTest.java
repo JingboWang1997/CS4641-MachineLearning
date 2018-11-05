@@ -66,6 +66,7 @@ public class wineTest {
         oa[2] = new StandardGeneticAlgorithm(populationSize, numMate, numMutate, nnop[2]);
 
         for(int i = 0; i < oa.length-2; i++) {
+            i = 2;
             Instance optimalInstance = null;
             double start = System.nanoTime(), end, trainingTime, testingTime, testCorrect = 0, testIncorrect = 0, trainingCorrect = 0, trainingIncorrect = 0;
             optimalInstance = train(oa[i], networks[i], oaNames[i], randomRestart); //trainer.train();

@@ -1,0 +1,582 @@
+Starting reachability analysis
+Finished reachability analysis; # states: 508
+Iterations in inner VI for policy eval: 160
+Total policy iterations: 1
+Starting reachability analysis
+Finished reachability analysis; # states: 508
+Iterations in inner VI for policy eval: 160
+Iterations in inner VI for policy eval: 68
+Total policy iterations: 2
+Starting reachability analysis
+Finished reachability analysis; # states: 508
+Iterations in inner VI for policy eval: 160
+Iterations in inner VI for policy eval: 68
+Iterations in inner VI for policy eval: 25
+Total policy iterations: 3
+Starting reachability analysis
+Finished reachability analysis; # states: 508
+Iterations in inner VI for policy eval: 160
+Iterations in inner VI for policy eval: 68
+Iterations in inner VI for policy eval: 25
+Iterations in inner VI for policy eval: 21
+Total policy iterations: 4
+Starting reachability analysis
+Finished reachability analysis; # states: 508
+Iterations in inner VI for policy eval: 160
+Iterations in inner VI for policy eval: 68
+Iterations in inner VI for policy eval: 25
+Iterations in inner VI for policy eval: 21
+Iterations in inner VI for policy eval: 23
+Total policy iterations: 5
+Starting reachability analysis
+Finished reachability analysis; # states: 508
+Iterations in inner VI for policy eval: 160
+Iterations in inner VI for policy eval: 68
+Iterations in inner VI for policy eval: 25
+Iterations in inner VI for policy eval: 21
+Iterations in inner VI for policy eval: 23
+Iterations in inner VI for policy eval: 19
+Total policy iterations: 6
+Starting reachability analysis
+Finished reachability analysis; # states: 508
+Iterations in inner VI for policy eval: 160
+Iterations in inner VI for policy eval: 68
+Iterations in inner VI for policy eval: 25
+Iterations in inner VI for policy eval: 21
+Iterations in inner VI for policy eval: 23
+Iterations in inner VI for policy eval: 19
+Iterations in inner VI for policy eval: 8
+Total policy iterations: 7
+Starting reachability analysis
+Finished reachability analysis; # states: 508
+Iterations in inner VI for policy eval: 160
+Iterations in inner VI for policy eval: 68
+Iterations in inner VI for policy eval: 25
+Iterations in inner VI for policy eval: 21
+Iterations in inner VI for policy eval: 23
+Iterations in inner VI for policy eval: 19
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 8
+Total policy iterations: 8
+Starting reachability analysis
+Finished reachability analysis; # states: 508
+Iterations in inner VI for policy eval: 160
+Iterations in inner VI for policy eval: 68
+Iterations in inner VI for policy eval: 25
+Iterations in inner VI for policy eval: 21
+Iterations in inner VI for policy eval: 23
+Iterations in inner VI for policy eval: 19
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 18
+Total policy iterations: 9
+Starting reachability analysis
+Finished reachability analysis; # states: 508
+Iterations in inner VI for policy eval: 160
+Iterations in inner VI for policy eval: 68
+Iterations in inner VI for policy eval: 25
+Iterations in inner VI for policy eval: 21
+Iterations in inner VI for policy eval: 23
+Iterations in inner VI for policy eval: 19
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 18
+Iterations in inner VI for policy eval: 13
+Total policy iterations: 10
+Starting reachability analysis
+Finished reachability analysis; # states: 508
+Iterations in inner VI for policy eval: 160
+Iterations in inner VI for policy eval: 68
+Iterations in inner VI for policy eval: 25
+Iterations in inner VI for policy eval: 21
+Iterations in inner VI for policy eval: 23
+Iterations in inner VI for policy eval: 19
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 18
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 13
+Total policy iterations: 11
+Starting reachability analysis
+Finished reachability analysis; # states: 508
+Iterations in inner VI for policy eval: 160
+Iterations in inner VI for policy eval: 68
+Iterations in inner VI for policy eval: 25
+Iterations in inner VI for policy eval: 21
+Iterations in inner VI for policy eval: 23
+Iterations in inner VI for policy eval: 19
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 18
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 14
+Total policy iterations: 12
+Starting reachability analysis
+Finished reachability analysis; # states: 508
+Iterations in inner VI for policy eval: 160
+Iterations in inner VI for policy eval: 68
+Iterations in inner VI for policy eval: 25
+Iterations in inner VI for policy eval: 21
+Iterations in inner VI for policy eval: 23
+Iterations in inner VI for policy eval: 19
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 18
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 14
+Iterations in inner VI for policy eval: 13
+Total policy iterations: 13
+Starting reachability analysis
+Finished reachability analysis; # states: 508
+Iterations in inner VI for policy eval: 160
+Iterations in inner VI for policy eval: 68
+Iterations in inner VI for policy eval: 25
+Iterations in inner VI for policy eval: 21
+Iterations in inner VI for policy eval: 23
+Iterations in inner VI for policy eval: 19
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 18
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 14
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 8
+Total policy iterations: 14
+Starting reachability analysis
+Finished reachability analysis; # states: 508
+Iterations in inner VI for policy eval: 160
+Iterations in inner VI for policy eval: 68
+Iterations in inner VI for policy eval: 25
+Iterations in inner VI for policy eval: 21
+Iterations in inner VI for policy eval: 23
+Iterations in inner VI for policy eval: 19
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 18
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 14
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 12
+Total policy iterations: 15
+Starting reachability analysis
+Finished reachability analysis; # states: 508
+Iterations in inner VI for policy eval: 160
+Iterations in inner VI for policy eval: 68
+Iterations in inner VI for policy eval: 25
+Iterations in inner VI for policy eval: 21
+Iterations in inner VI for policy eval: 23
+Iterations in inner VI for policy eval: 19
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 18
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 14
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 12
+Iterations in inner VI for policy eval: 9
+Total policy iterations: 16
+Starting reachability analysis
+Finished reachability analysis; # states: 508
+Iterations in inner VI for policy eval: 160
+Iterations in inner VI for policy eval: 68
+Iterations in inner VI for policy eval: 25
+Iterations in inner VI for policy eval: 21
+Iterations in inner VI for policy eval: 23
+Iterations in inner VI for policy eval: 19
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 18
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 14
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 12
+Iterations in inner VI for policy eval: 9
+Iterations in inner VI for policy eval: 8
+Total policy iterations: 17
+Starting reachability analysis
+Finished reachability analysis; # states: 508
+Iterations in inner VI for policy eval: 160
+Iterations in inner VI for policy eval: 68
+Iterations in inner VI for policy eval: 25
+Iterations in inner VI for policy eval: 21
+Iterations in inner VI for policy eval: 23
+Iterations in inner VI for policy eval: 19
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 18
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 14
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 12
+Iterations in inner VI for policy eval: 9
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 9
+Total policy iterations: 18
+Starting reachability analysis
+Finished reachability analysis; # states: 508
+Iterations in inner VI for policy eval: 160
+Iterations in inner VI for policy eval: 68
+Iterations in inner VI for policy eval: 25
+Iterations in inner VI for policy eval: 21
+Iterations in inner VI for policy eval: 23
+Iterations in inner VI for policy eval: 19
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 18
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 14
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 12
+Iterations in inner VI for policy eval: 9
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 9
+Iterations in inner VI for policy eval: 9
+Total policy iterations: 19
+Starting reachability analysis
+Finished reachability analysis; # states: 508
+Iterations in inner VI for policy eval: 160
+Iterations in inner VI for policy eval: 68
+Iterations in inner VI for policy eval: 25
+Iterations in inner VI for policy eval: 21
+Iterations in inner VI for policy eval: 23
+Iterations in inner VI for policy eval: 19
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 18
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 14
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 12
+Iterations in inner VI for policy eval: 9
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 9
+Iterations in inner VI for policy eval: 9
+Iterations in inner VI for policy eval: 5
+Total policy iterations: 20
+Starting reachability analysis
+Finished reachability analysis; # states: 508
+Iterations in inner VI for policy eval: 160
+Iterations in inner VI for policy eval: 68
+Iterations in inner VI for policy eval: 25
+Iterations in inner VI for policy eval: 21
+Iterations in inner VI for policy eval: 23
+Iterations in inner VI for policy eval: 19
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 18
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 14
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 12
+Iterations in inner VI for policy eval: 9
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 9
+Iterations in inner VI for policy eval: 9
+Iterations in inner VI for policy eval: 5
+Iterations in inner VI for policy eval: 2
+Total policy iterations: 21
+Starting reachability analysis
+Finished reachability analysis; # states: 508
+Iterations in inner VI for policy eval: 160
+Iterations in inner VI for policy eval: 68
+Iterations in inner VI for policy eval: 25
+Iterations in inner VI for policy eval: 21
+Iterations in inner VI for policy eval: 23
+Iterations in inner VI for policy eval: 19
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 18
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 14
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 12
+Iterations in inner VI for policy eval: 9
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 9
+Iterations in inner VI for policy eval: 9
+Iterations in inner VI for policy eval: 5
+Iterations in inner VI for policy eval: 2
+Iterations in inner VI for policy eval: 2
+Total policy iterations: 22
+Starting reachability analysis
+Finished reachability analysis; # states: 508
+Iterations in inner VI for policy eval: 160
+Iterations in inner VI for policy eval: 68
+Iterations in inner VI for policy eval: 25
+Iterations in inner VI for policy eval: 21
+Iterations in inner VI for policy eval: 23
+Iterations in inner VI for policy eval: 19
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 18
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 14
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 12
+Iterations in inner VI for policy eval: 9
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 9
+Iterations in inner VI for policy eval: 9
+Iterations in inner VI for policy eval: 5
+Iterations in inner VI for policy eval: 2
+Iterations in inner VI for policy eval: 2
+Iterations in inner VI for policy eval: 2
+Total policy iterations: 23
+Starting reachability analysis
+Finished reachability analysis; # states: 508
+Iterations in inner VI for policy eval: 160
+Iterations in inner VI for policy eval: 68
+Iterations in inner VI for policy eval: 25
+Iterations in inner VI for policy eval: 21
+Iterations in inner VI for policy eval: 23
+Iterations in inner VI for policy eval: 19
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 18
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 14
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 12
+Iterations in inner VI for policy eval: 9
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 9
+Iterations in inner VI for policy eval: 9
+Iterations in inner VI for policy eval: 5
+Iterations in inner VI for policy eval: 2
+Iterations in inner VI for policy eval: 2
+Iterations in inner VI for policy eval: 2
+Iterations in inner VI for policy eval: 2
+Total policy iterations: 24
+Starting reachability analysis
+Finished reachability analysis; # states: 508
+Iterations in inner VI for policy eval: 160
+Iterations in inner VI for policy eval: 68
+Iterations in inner VI for policy eval: 25
+Iterations in inner VI for policy eval: 21
+Iterations in inner VI for policy eval: 23
+Iterations in inner VI for policy eval: 19
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 18
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 14
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 12
+Iterations in inner VI for policy eval: 9
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 9
+Iterations in inner VI for policy eval: 9
+Iterations in inner VI for policy eval: 5
+Iterations in inner VI for policy eval: 2
+Iterations in inner VI for policy eval: 2
+Iterations in inner VI for policy eval: 2
+Iterations in inner VI for policy eval: 2
+Iterations in inner VI for policy eval: 2
+Total policy iterations: 25
+Starting reachability analysis
+Finished reachability analysis; # states: 508
+Iterations in inner VI for policy eval: 160
+Iterations in inner VI for policy eval: 68
+Iterations in inner VI for policy eval: 25
+Iterations in inner VI for policy eval: 21
+Iterations in inner VI for policy eval: 23
+Iterations in inner VI for policy eval: 19
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 18
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 14
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 12
+Iterations in inner VI for policy eval: 9
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 9
+Iterations in inner VI for policy eval: 9
+Iterations in inner VI for policy eval: 5
+Iterations in inner VI for policy eval: 2
+Iterations in inner VI for policy eval: 2
+Iterations in inner VI for policy eval: 2
+Iterations in inner VI for policy eval: 2
+Iterations in inner VI for policy eval: 2
+Iterations in inner VI for policy eval: 1
+Total policy iterations: 26
+Starting reachability analysis
+Finished reachability analysis; # states: 508
+Iterations in inner VI for policy eval: 160
+Iterations in inner VI for policy eval: 68
+Iterations in inner VI for policy eval: 25
+Iterations in inner VI for policy eval: 21
+Iterations in inner VI for policy eval: 23
+Iterations in inner VI for policy eval: 19
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 18
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 14
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 12
+Iterations in inner VI for policy eval: 9
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 9
+Iterations in inner VI for policy eval: 9
+Iterations in inner VI for policy eval: 5
+Iterations in inner VI for policy eval: 2
+Iterations in inner VI for policy eval: 2
+Iterations in inner VI for policy eval: 2
+Iterations in inner VI for policy eval: 2
+Iterations in inner VI for policy eval: 2
+Iterations in inner VI for policy eval: 1
+Total policy iterations: 26
+Starting reachability analysis
+Finished reachability analysis; # states: 508
+Iterations in inner VI for policy eval: 160
+Iterations in inner VI for policy eval: 68
+Iterations in inner VI for policy eval: 25
+Iterations in inner VI for policy eval: 21
+Iterations in inner VI for policy eval: 23
+Iterations in inner VI for policy eval: 19
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 18
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 14
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 12
+Iterations in inner VI for policy eval: 9
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 9
+Iterations in inner VI for policy eval: 9
+Iterations in inner VI for policy eval: 5
+Iterations in inner VI for policy eval: 2
+Iterations in inner VI for policy eval: 2
+Iterations in inner VI for policy eval: 2
+Iterations in inner VI for policy eval: 2
+Iterations in inner VI for policy eval: 2
+Iterations in inner VI for policy eval: 1
+Total policy iterations: 26
+Starting reachability analysis
+Finished reachability analysis; # states: 508
+Iterations in inner VI for policy eval: 160
+Iterations in inner VI for policy eval: 68
+Iterations in inner VI for policy eval: 25
+Iterations in inner VI for policy eval: 21
+Iterations in inner VI for policy eval: 23
+Iterations in inner VI for policy eval: 19
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 18
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 14
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 12
+Iterations in inner VI for policy eval: 9
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 9
+Iterations in inner VI for policy eval: 9
+Iterations in inner VI for policy eval: 5
+Iterations in inner VI for policy eval: 2
+Iterations in inner VI for policy eval: 2
+Iterations in inner VI for policy eval: 2
+Iterations in inner VI for policy eval: 2
+Iterations in inner VI for policy eval: 2
+Iterations in inner VI for policy eval: 1
+Total policy iterations: 26
+Starting reachability analysis
+Finished reachability analysis; # states: 508
+Iterations in inner VI for policy eval: 160
+Iterations in inner VI for policy eval: 68
+Iterations in inner VI for policy eval: 25
+Iterations in inner VI for policy eval: 21
+Iterations in inner VI for policy eval: 23
+Iterations in inner VI for policy eval: 19
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 18
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 14
+Iterations in inner VI for policy eval: 13
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 12
+Iterations in inner VI for policy eval: 9
+Iterations in inner VI for policy eval: 8
+Iterations in inner VI for policy eval: 9
+Iterations in inner VI for policy eval: 9
+Iterations in inner VI for policy eval: 5
+Iterations in inner VI for policy eval: 2
+Iterations in inner VI for policy eval: 2
+Iterations in inner VI for policy eval: 2
+Iterations in inner VI for policy eval: 2
+Iterations in inner VI for policy eval: 2
+Iterations in inner VI for policy eval: 1
+Total policy iterations: 26
+Num generated: 8128; num unique: 509
+Episode, Steps, Reward, Time (in milliseconds)
+1, 729, -72.80000000000014, 9776
+2, 729, -72.80000000000014, 9473
+3, 729, -73.70000000000007, 11107
+4, 729, -72.80000000000014, 11279
+5, 67, -6.5999999999999925, 12529
+6, 74, -7.29999999999999, 13385
+7, 70, -6.8999999999999915, 19881
+8, 61, -5.999999999999995, 23100
+9, 55, -5.399999999999997, 22202
+10, 88, -8.699999999999985, 36467
+11, 84, -8.299999999999986, 36696
+12, 62, -6.099999999999994, 38241
+13, 65, -6.399999999999993, 38822
+14, 67, -6.5999999999999925, 40335
+15, 59, -5.799999999999995, 41360
+16, 60, -5.899999999999995, 41817
+17, 59, -5.799999999999995, 42837
+18, 68, -12.499999999999993, 43833
+19, 51, -4.999999999999998, 44699
+20, 67, -6.5999999999999925, 44558
+21, 55, -5.399999999999997, 45574
+22, 57, -5.599999999999996, 63835
+23, 62, -6.099999999999994, 44778
+24, 73, -7.19999999999999, 45016
+25, 70, -6.8999999999999915, 44627
+26, 69, -6.799999999999992, 55523
+27, 68, -6.699999999999992, 52447
+28, 62, -6.099999999999994, 46223
+29, 74, -7.29999999999999, 48847
+30, 63, -6.199999999999994, 47507
+
+Average Reward: -15.543333333333344
+Average Number of Steps: 154
+Minimum Number of Steps: 51
+Average Time (in milliseconds): 35892

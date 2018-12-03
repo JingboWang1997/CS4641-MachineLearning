@@ -1,0 +1,807 @@
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 1
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 2
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 3
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 4
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 5
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 6
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 7
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 8
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 9
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 10
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 11
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 12
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 13
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 14
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 15
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 16
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 17
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 18
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 19
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 20
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 21
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 22
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 23
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 24
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 25
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 26
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 27
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 28
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 29
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 30
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 31
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 32
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 33
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 34
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 35
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 36
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 37
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 38
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 39
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 40
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 41
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 42
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 43
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 44
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 45
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 46
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 47
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 48
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 49
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 50
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 51
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 52
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 53
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 54
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 55
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 56
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 57
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 58
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 59
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 60
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 61
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 62
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 63
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 64
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 65
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 66
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 67
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 68
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 69
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 70
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 71
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 72
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 73
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 74
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 75
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 76
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 77
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 78
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 79
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 80
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 81
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 82
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 83
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 84
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 85
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 86
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 87
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 88
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 89
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 90
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 91
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 92
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 93
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 94
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 95
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 96
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 97
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 98
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 99
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 100
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 101
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 102
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 103
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 104
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 105
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 106
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 107
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 108
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 109
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 110
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 111
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 112
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 113
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 114
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 115
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 116
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 117
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 118
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 119
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 120
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 121
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 122
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 123
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 124
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 125
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 126
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 127
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 128
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 129
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 130
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 131
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 132
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 133
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 134
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 135
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 136
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 137
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 138
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 139
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 140
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 141
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 142
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 143
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 144
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 145
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 146
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 147
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 148
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 149
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 150
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 151
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 152
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 153
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 154
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 155
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 156
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 157
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 158
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 159
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 160
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 160
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 160
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 160
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 160
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 160
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 160
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 160
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 160
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 160
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 160
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 160
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 160
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 160
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 160
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 160
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 160
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 160
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 160
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 160
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 160
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 160
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 160
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 160
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 160
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 160
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 160
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 160
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 160
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 160
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 160
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 160
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 160
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 160
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 160
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 160
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 160
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 160
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 160
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 160
+Starting reachability analysis
+Finished reachability analysis; # states: 509
+Passes: 160
+Num generated: 8128; num unique: 509
+Episode, Steps, Reward, Time (in milliseconds)
+1, 729, -75.49999999999997, 1222
+2, 729, -73.70000000000007, 1142
+3, 729, -76.39999999999995, 851
+4, 729, -73.70000000000007, 387
+5, 729, -72.80000000000014, 480
+6, 729, -73.70000000000007, 361
+7, 729, -72.80000000000014, 346
+8, 729, -72.80000000000014, 549
+9, 729, -72.80000000000014, 444
+10, 729, -72.80000000000014, 404
+11, 729, -72.80000000000014, 435
+12, 729, -72.80000000000014, 489
+13, 729, -72.80000000000014, 552
+14, 729, -72.80000000000014, 657
+15, 729, -72.80000000000014, 676
+16, 729, -72.80000000000014, 1117
+17, 729, -72.80000000000014, 1778
+18, 729, -72.80000000000014, 1824
+19, 729, -72.80000000000014, 2002
+20, 729, -72.80000000000014, 1980
+21, 729, -72.80000000000014, 1166
+22, 729, -72.80000000000014, 2390
+23, 729, -72.80000000000014, 2415
+24, 729, -72.80000000000014, 1628
+25, 729, -72.80000000000014, 1072
+26, 729, -72.80000000000014, 1088
+27, 729, -72.80000000000014, 1178
+28, 729, -72.80000000000014, 2796
+29, 729, -72.80000000000014, 2928
+30, 729, -72.80000000000014, 3116
+31, 729, -72.80000000000014, 3148
+32, 729, -72.80000000000014, 3198
+33, 729, -72.80000000000014, 3346
+34, 729, -72.80000000000014, 2627
+35, 729, -72.80000000000014, 1507
+36, 729, -72.80000000000014, 3727
+37, 729, -72.80000000000014, 3812
+38, 729, -72.80000000000014, 3915
+39, 729, -72.80000000000014, 4052
+40, 729, -72.80000000000014, 4077
+41, 729, -72.80000000000014, 4018
+42, 729, -72.80000000000014, 4303
+43, 729, -72.80000000000014, 4183
+44, 729, -72.80000000000014, 4529
+45, 729, -72.80000000000014, 2988
+46, 729, -72.80000000000014, 2474
+47, 729, -72.80000000000014, 2493
+48, 729, -72.80000000000014, 4672
+49, 729, -72.80000000000014, 1996
+50, 729, -72.80000000000014, 1831
+51, 729, -72.80000000000014, 1791
+52, 729, -72.80000000000014, 1980
+53, 729, -72.80000000000014, 2289
+54, 729, -72.80000000000014, 2081
+55, 729, -72.80000000000014, 2362
+56, 729, -72.80000000000014, 2260
+57, 65, -6.399999999999993, 2125
+58, 60, -5.899999999999995, 2032
+59, 66, -6.499999999999993, 2208
+60, 67, -6.5999999999999925, 2284
+61, 68, -6.699999999999992, 2251
+62, 55, -5.399999999999997, 2526
+63, 59, -5.799999999999995, 2319
+64, 88, -8.699999999999985, 3101
+65, 72, -7.099999999999991, 2909
+66, 70, -6.8999999999999915, 2417
+67, 55, -5.399999999999997, 2763
+68, 64, -12.099999999999994, 3322
+69, 53, -5.1999999999999975, 2959
+70, 58, -5.699999999999996, 3077
+71, 49, -4.799999999999999, 3176
+72, 69, -6.799999999999992, 3064
+73, 52, -5.099999999999998, 3419
+74, 66, -6.499999999999993, 4004
+75, 65, -6.399999999999993, 4157
+76, 66, -6.499999999999993, 3072
+77, 56, -5.4999999999999964, 3252
+78, 57, -5.599999999999996, 6678
+79, 68, -6.699999999999992, 3426
+80, 66, -9.399999999999993, 3750
+81, 59, -5.799999999999995, 3936
+82, 69, -6.799999999999992, 3441
+83, 61, -11.799999999999995, 3541
+84, 57, -11.399999999999995, 4546
+85, 69, -6.799999999999992, 5075
+86, 68, -6.699999999999992, 4544
+87, 58, -5.699999999999996, 3599
+88, 77, -7.599999999999989, 3566
+89, 63, -6.199999999999994, 3372
+90, 57, -5.599999999999996, 3376
+91, 57, -5.599999999999996, 3815
+92, 62, -6.099999999999994, 3830
+93, 55, -5.399999999999997, 3803
+94, 65, -6.399999999999993, 3559
+95, 56, -8.399999999999997, 3377
+96, 52, -5.099999999999998, 3461
+97, 53, -5.1999999999999975, 3528
+98, 73, -7.19999999999999, 3452
+99, 61, -5.999999999999995, 3690
+100, 71, -12.799999999999992, 3982
+101, 64, -6.299999999999994, 3872
+102, 54, -5.299999999999997, 3927
+103, 74, -7.29999999999999, 4077
+104, 59, -5.799999999999995, 4003
+105, 56, -5.4999999999999964, 4089
+106, 65, -9.299999999999994, 4570
+107, 72, -7.099999999999991, 4850
+108, 63, -6.199999999999994, 4222
+109, 82, -8.099999999999987, 4611
+110, 68, -6.699999999999992, 3918
+111, 66, -6.499999999999993, 3929
+112, 64, -6.299999999999994, 4338
+113, 65, -6.399999999999993, 4167
+114, 63, -6.199999999999994, 4394
+115, 58, -5.699999999999996, 4491
+116, 65, -6.399999999999993, 4334
+117, 63, -6.199999999999994, 4347
+118, 65, -6.399999999999993, 4597
+119, 52, -5.099999999999998, 6567
+120, 63, -6.199999999999994, 5155
+121, 60, -5.899999999999995, 4469
+122, 65, -6.399999999999993, 4443
+123, 64, -6.299999999999994, 4825
+124, 60, -5.899999999999995, 4642
+125, 64, -6.299999999999994, 4699
+126, 59, -5.799999999999995, 4789
+127, 70, -6.8999999999999915, 5066
+128, 62, -8.999999999999995, 5633
+129, 56, -5.4999999999999964, 5182
+130, 59, -5.799999999999995, 5090
+131, 61, -5.999999999999995, 4595
+132, 50, -4.899999999999999, 4955
+133, 61, -5.999999999999995, 4993
+134, 66, -6.499999999999993, 4992
+135, 65, -6.399999999999993, 5508
+136, 56, -5.4999999999999964, 5142
+137, 65, -6.399999999999993, 4922
+138, 67, -6.5999999999999925, 5176
+139, 68, -6.699999999999992, 5406
+140, 66, -6.499999999999993, 5545
+141, 67, -6.5999999999999925, 5440
+142, 54, -5.299999999999997, 5200
+143, 61, -5.999999999999995, 5299
+144, 67, -6.5999999999999925, 5377
+145, 55, -5.399999999999997, 5492
+146, 55, -5.399999999999997, 5706
+147, 73, -7.19999999999999, 5762
+148, 61, -5.999999999999995, 5452
+149, 54, -5.299999999999997, 5360
+150, 64, -6.299999999999994, 5421
+151, 68, -6.699999999999992, 5590
+152, 70, -6.8999999999999915, 5660
+153, 56, -5.4999999999999964, 5909
+154, 68, -6.699999999999992, 6553
+155, 75, -7.39999999999999, 8615
+156, 67, -6.5999999999999925, 6122
+157, 66, -9.399999999999993, 6002
+158, 56, -5.4999999999999964, 8307
+159, 59, -5.799999999999995, 6198
+160, 65, -6.399999999999993, 6003
+161, 60, -5.899999999999995, 6144
+162, 77, -7.599999999999989, 6224
+163, 57, -5.599999999999996, 6266
+164, 76, -7.499999999999989, 5975
+165, 69, -6.799999999999992, 6056
+166, 60, -5.899999999999995, 5907
+167, 65, -6.399999999999993, 6566
+168, 62, -6.099999999999994, 6654
+169, 65, -6.399999999999993, 6005
+170, 67, -6.5999999999999925, 6257
+171, 63, -6.199999999999994, 6041
+172, 54, -5.299999999999997, 6173
+173, 83, -8.199999999999987, 5895
+174, 61, -5.999999999999995, 5798
+175, 56, -5.4999999999999964, 6032
+176, 79, -14.499999999999986, 5784
+177, 73, -7.19999999999999, 5752
+178, 64, -6.299999999999994, 5961
+179, 62, -6.099999999999994, 6096
+180, 70, -6.8999999999999915, 5960
+181, 50, -4.899999999999999, 5944
+182, 71, -6.999999999999991, 5710
+183, 76, -7.499999999999989, 5895
+184, 78, -7.699999999999989, 6098
+185, 64, -6.299999999999994, 5907
+186, 57, -5.599999999999996, 5568
+187, 65, -6.399999999999993, 5565
+188, 57, -5.599999999999996, 5645
+189, 63, -6.199999999999994, 5946
+190, 56, -5.4999999999999964, 6142
+191, 77, -8.499999999999986, 6093
+192, 54, -5.299999999999997, 5951
+193, 52, -5.099999999999998, 6222
+194, 66, -6.499999999999993, 6117
+195, 66, -6.499999999999993, 5897
+196, 64, -6.299999999999994, 6037
+197, 67, -6.5999999999999925, 6032
+198, 75, -7.39999999999999, 5822
+199, 70, -6.8999999999999915, 5804
+200, 59, -5.799999999999995, 5893
+
+Average Reward: -25.160000000000036
+Average Number of Steps: 249
+Minimum Number of Steps: 49
+Average Time (in milliseconds): 4073

@@ -6,6 +6,7 @@ import java.util.List;
 import burlap.behavior.policy.EpsilonGreedy;
 import burlap.behavior.policy.Policy;
 import burlap.behavior.policy.PolicyUtils;
+import burlap.behavior.policy.RandomPolicy;
 import burlap.behavior.singleagent.Episode;
 import burlap.behavior.singleagent.auxiliary.StateReachability;
 import burlap.behavior.singleagent.auxiliary.performance.LearningAlgorithmExperimenter;
@@ -48,7 +49,7 @@ public class Main {
 	 * different problems, but you can add more problems and control which one runs by using this
 	 * constant.
 	 */
-	private static int PROBLEM = 1;
+	private static int PROBLEM = 2;
 
 	/*
 	 * This class runs one algorithm at the time. You can set this constant to the specific
@@ -138,7 +139,7 @@ public class Main {
 
 					@Override
 					public Planner createPlanner(int episodeIndex, SADomain domain, HashableStateFactory hashingFactory, SimulatedEnvironment simulatedEnvironment) {
-						return new ValueIteration(domain, 0.99, hashingFactory, 0.001, episodeIndex);
+						return new ValueIteration(domain, 0.9, hashingFactory, 0.001, episodeIndex);
 					}
 				}, algorithm);
 				break;
@@ -160,7 +161,7 @@ public class Main {
 						 * ValueIteration converges faster than the number of configured
 						 * iterations).
 						 */
-						return new PolicyIteration(domain, 0.99, hashingFactory, 0.102, 16, episodeIndex);
+						return new PolicyIteration(domain, 0.99, hashingFactory, 0.01, 160, episodeIndex);
 					}
 				}, algorithm);
 				break;
@@ -170,7 +171,9 @@ public class Main {
 					@Override
 					public Planner createPlanner(int episodeIndex, SADomain domain, HashableStateFactory hashingFactory, SimulatedEnvironment simulatedEnvironment) {
 						QLearning agent = new QLearning(domain, 0.99, hashingFactory, 0.3, 0.3);
-						agent.setLearningPolicy(new EpsilonGreedy(agent, 0.1));
+//						agent.setLearningRateFunction(new burlap.behavior.learningrate.ExponentialDecayLR(0.6, 0.9));
+						agent.setLearningPolicy(new EpsilonGreedy(agent, 0.3));
+						agent.setLearningPolicy(new RandomPolicy(domain));
 						for (int i = 0; i < episodeIndex; i++) {
 							System.out.println(i);
 							agent.runLearningEpisode(simulatedEnvironment);
@@ -295,7 +298,7 @@ public class Main {
 		HashMap<Algorithm, Integer> numIterationsHashMap = new HashMap<Algorithm, Integer>();
 		numIterationsHashMap.put(Algorithm.ValueIteration, 100);
 		numIterationsHashMap.put(Algorithm.PolicyIteration, 20);
-		numIterationsHashMap.put(Algorithm.QLearning, 240);
+		numIterationsHashMap.put(Algorithm.QLearning, 500);
 
 		/*
 		 * These are the specific rewards for each one of the hazards. Here you can be creative and
@@ -347,7 +350,7 @@ public class Main {
 		};
 
 		HashMap<Algorithm, Integer> numIterationsHashMap = new HashMap<Algorithm, Integer>();
-		numIterationsHashMap.put(Algorithm.ValueIteration, 100);
+		numIterationsHashMap.put(Algorithm.ValueIteration, 50);
 		numIterationsHashMap.put(Algorithm.PolicyIteration, 100);
 		numIterationsHashMap.put(Algorithm.QLearning, 1000);
 		

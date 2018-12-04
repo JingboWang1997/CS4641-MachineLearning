@@ -55,7 +55,7 @@ public class Main {
 	 * This class runs one algorithm at the time. You can set this constant to the specific
 	 * algorithm you want to run.
 	 */
-	private final static Algorithm algorithm = Algorithm.QLearning;
+	private final static Algorithm algorithm = Algorithm.PolicyIteration;
 
 	/*
 	 * If you set this constant to false, the specific GUI showing the grid, rewards, and policy
@@ -139,7 +139,7 @@ public class Main {
 
 					@Override
 					public Planner createPlanner(int episodeIndex, SADomain domain, HashableStateFactory hashingFactory, SimulatedEnvironment simulatedEnvironment) {
-						return new ValueIteration(domain, 0.9, hashingFactory, 0.001, episodeIndex);
+						return new ValueIteration(domain, 0.99, hashingFactory, 0.001, episodeIndex);
 					}
 				}, algorithm);
 				break;
@@ -172,7 +172,7 @@ public class Main {
 					public Planner createPlanner(int episodeIndex, SADomain domain, HashableStateFactory hashingFactory, SimulatedEnvironment simulatedEnvironment) {
 						QLearning agent = new QLearning(domain, 0.99, hashingFactory, 0.3, 0.3);
 //						agent.setLearningRateFunction(new burlap.behavior.learningrate.ExponentialDecayLR(0.6, 0.9));
-						agent.setLearningPolicy(new EpsilonGreedy(agent, 0.3));
+						agent.setLearningPolicy(new EpsilonGreedy(agent, 0.6));
 						agent.setLearningPolicy(new RandomPolicy(domain));
 						for (int i = 0; i < episodeIndex; i++) {
 							System.out.println(i);
@@ -350,8 +350,8 @@ public class Main {
 		};
 
 		HashMap<Algorithm, Integer> numIterationsHashMap = new HashMap<Algorithm, Integer>();
-		numIterationsHashMap.put(Algorithm.ValueIteration, 50);
-		numIterationsHashMap.put(Algorithm.PolicyIteration, 100);
+		numIterationsHashMap.put(Algorithm.ValueIteration, 160);
+		numIterationsHashMap.put(Algorithm.PolicyIteration, 25);
 		numIterationsHashMap.put(Algorithm.QLearning, 1000);
 		
 		HashMap<HazardType, Double> hazardRewardsHashMap = new HashMap<HazardType, Double>();

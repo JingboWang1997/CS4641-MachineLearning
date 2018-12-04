@@ -55,7 +55,7 @@ public class Main {
 	 * This class runs one algorithm at the time. You can set this constant to the specific
 	 * algorithm you want to run.
 	 */
-	private final static Algorithm algorithm = Algorithm.PolicyIteration;
+	private final static Algorithm algorithm = Algorithm.QLearning;
 
 	/*
 	 * If you set this constant to false, the specific GUI showing the grid, rewards, and policy
@@ -173,7 +173,7 @@ public class Main {
 						QLearning agent = new QLearning(domain, 0.99, hashingFactory, 0.3, 0.3);
 //						agent.setLearningRateFunction(new burlap.behavior.learningrate.ExponentialDecayLR(0.6, 0.9));
 						agent.setLearningPolicy(new EpsilonGreedy(agent, 0.6));
-						agent.setLearningPolicy(new RandomPolicy(domain));
+//						agent.setLearningPolicy(new RandomPolicy(domain));
 						for (int i = 0; i < episodeIndex; i++) {
 							System.out.println(i);
 							agent.runLearningEpisode(simulatedEnvironment);
@@ -205,7 +205,7 @@ public class Main {
 		SimulatedEnvironment simulatedEnvironment = new SimulatedEnvironment(domain, constantStateGenerator);
 		Planner planner = null;
 		Policy policy = null;
-		for (int episodeIndex = 1; episodeIndex <= problem.getNumberOfIterations(algorithm); episodeIndex++) {
+		for (int episodeIndex = 0; episodeIndex <= problem.getNumberOfIterations(algorithm); episodeIndex++) {
 			long startTime = System.nanoTime();
 			planner = plannerFactory.createPlanner(episodeIndex, domain, hashingFactory, simulatedEnvironment);
 			policy = planner.planFromState(initialState);
